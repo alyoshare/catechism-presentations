@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light of God - The Easter Promise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            max-width: 177.78vh;
+            max-height: 56.25vw;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #fafaf8 0%, #f0efe9 100%);
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4vw;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 5vw;
+            color: #2c3e50;
+            margin-bottom: 2vw;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 3.5vw;
+            color: #34495e;
+            margin-bottom: 1.5vw;
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 2.5vw;
+            color: #5d6d7e;
+            margin-bottom: 1vw;
+            font-weight: 500;
+        }
+
+        p, li {
+            font-size: 2.2vw;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        li {
+            max-width: 100%;
+        }
+
+        ul {
+            text-align: left;
+            margin: 1vw 0;
+            width: 70vw;
+            padding-left: 7vw;
+        }
+
+        li {
+            margin: 0.8vw 0;
+        }
+
+        .quote {
+            background: rgba(255,255,255,0.7);
+            padding: 3vw 4vw;
+            border-radius: 1vw;
+            margin: 1.5vw 0;
+            border-left: 4px solid #d4a574;
+            font-size: 3vw;
+            max-width: 75%;
+            line-height: 1.5;
+            text-align: left;
+            position: relative;
+        }
+
+        .scripture-ref {
+            color: #8e44ad;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+
+        .quote-bible-icon {
+            width: 3vw;
+            height: auto;
+        }
+
+        .highlight {
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        .ccc {
+            background: rgba(212, 165, 116, 0.15);
+            padding: 4vw 5vw;
+            border-radius: 2vw;
+            margin: 2vw 0;
+            font-size: 2.8vw;
+            max-width: 80%;
+            position: relative;
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            line-height: 1.6;
+        }
+
+        .ccc-ref {
+            position: absolute;
+            bottom: 1.5vw;
+            right: 2vw;
+            font-size: 1.5vw;
+            color: #8b6914;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5vw;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 2vw;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2vw;
+            z-index: 100;
+        }
+
+        .control-btn {
+            background: none;
+            color: rgba(0,0,0,0.15);
+            border: none;
+            padding: 1vw 2vw;
+            font-size: 3vw;
+            border-radius: 0.5vw;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .control-btn:hover {
+            color: rgba(0,0,0,0.3);
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 2vw;
+            right: 3vw;
+            font-size: 1.2vw;
+            color: #7f8c8d;
+        }
+
+
+        .scripture-ref {
+            color: #8e44ad;
+            font-weight: 600;
+        }
+
+        .slide-left {
+            text-align: left;
+            align-items: flex-start;
+        }
+        
+        .slide-left h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slide active">
+            <h1>Light of God</h1>
+            <h2>The Easter Promise</h2>
+        </div>
+
+        <div class="slide">
+            <h1>Opening Prayer</h1>
+        </div>
+
+        <div class="slide">
+            <div class="quote" style="font-size: 3vw; width: 100%;">
+                Come, Holy Spirit, live in us<br>
+                With God the Father and the Son,<br>
+                And grant us your abundant grace<br>
+                To sanctify and make us one.
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="quote" style="font-size: 3vw; width: 100%;">
+                May mind and tongue made strong in love<br>
+                Your praise throughout the world proclaim,<br>
+                And may that love within our hearts<br>
+                Set fire to others with its flame.
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="quote" style="font-size: 3vw; width: 100%;">
+                Most blessèd Trinity of love,<br>
+                For whom the heart of man was made,<br>
+                To you be praise in timeless song,<br>
+                And everlasting homage paid.
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>Check-in<h1>
+            <h2>Do you have a character in a book, movie,<br>
+                or cartoon that you feared in childhood? Why?</h2>
+        </div>
+
+        <div class="slide">
+            <video width="100%" height="100%" controls>
+                <source src="./harry.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="slide">
+            <img src="evil-characters.png" alt="Evil Characters" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+
+        <div class="slide">
+            <h1>Why do we fear darkness?</h1>
+        </div>
+
+        <div class="slide">
+            <h1>Because God created us in Light and leads us with light</h1>
+        </div>
+
+        <div class="slide">
+            <div class="ccc">
+                "Since God could create everything out of nothing, he can also, through the Holy Spirit, give spiritual life to sinners by creating a pure heart in them... God 'gives life to the dead and calls into existence the things that do not exist.'"
+                <div class="ccc-ref">📖 CCC 298</div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>Stage 1: Creation</h1>
+        </div>
+
+        <div class="slide">
+            <p class="scripture-ref"><img src="bible.png" class="quote-bible-icon" alt="Bible"> Genesis 1:1-4</p>
+            <div class="quote">
+                "In the beginning when God created the heavens and the earth, the earth was a formless void and darkness covered the face of the deep... Then God said, 'Let there be light'; and there was light."
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>Why did God create light first?</h1>
+        </div>
+
+        <div class="slide">
+            <h1>Stage 2: Exodus</h1>
+        </div>
+
+        <div class="slide">
+            <p class="scripture-ref"><img src="bible.png" class="quote-bible-icon" alt="Bible"> Exodus 13:21</p>
+            <div class="quote">
+                "The Lord went in front of them in a pillar of cloud by day, to lead them along the way, and in a pillar of fire by night, to give them light..."
+            </div>
+        </div>
+
+        <div class="slide">
+            <div style="display: flex; gap: 3vw; justify-content: center; align-items: center; width: 100%;">
+                <img src="./candle.png" alt="Candle" style="width: 35vw; height: 35vw; object-fit: cover; object-position: center; border-radius: 1vw;">
+                <img src="./scent.png" alt="Scent" style="width: 35vw; height: 35vw; object-fit: cover; object-position: center; border-radius: 1vw;">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="ccc">
+                "The candle, lit from the Easter candle, signifies that Christ has enlightened the neophyte. In him the baptized are 'the light of the world.'"
+                <div class="ccc-ref">📖 CCC 1243</div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>Stage 3: The Incarnation</h1>
+        </div>
+
+        <div class="slide">
+            <p class="scripture-ref"><img src="bible.png" class="quote-bible-icon" alt="Bible"> Isaiah 9:2</p>
+            <div class="quote">
+                "The people who walked in darkness have seen a great light; those who lived in a land of deep darkness—on them light has shined."
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="scripture-ref"><img src="bible.png" class="quote-bible-icon" alt="Bible"> Isaiah 9:6</p>
+            <div class="quote">
+                "For a child has been born for us, a son given to us... Wonderful Counsellor, Mighty God, Everlasting Father, Prince of Peace."
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Incarnation - Fulfillment</h2>
+            <p>Christ is the light that shines to lead us out of the oppression of sin.</p>
+        </div>
+
+        <div class="slide">
+            <h1>Stage 4: The Resurrection</h1>
+        </div>
+
+        <div class="slide">
+            <p class="scripture-ref"><img src="bible.png" class="quote-bible-icon" alt="Bible"> John 1:1-5</p>
+            <div class="quote">
+                "In the beginning was the Word... What has come into being in him was life, and the life was the light of all people. The light shines in the darkness, and the darkness did not overcome it."
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="./empty-tomb.jpg" alt="Empty Tomb" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+
+        <div class="slide">
+            <h1>Stage 5: Parousia</h1>
+        </div>
+
+        <div class="slide">
+            <p class="scripture-ref"><img src="bible.png" class="quote-bible-icon" alt="Bible"> Revelation 19:6-8</p>
+            <div class="quote">
+                "Let us rejoice and celebrate and give Him the glory. For the marriage of the Lamb has come, and His bride has made herself ready. She was given clothing of fine linen, linen bright and pure."
+            </div>
+        </div>
+
+        <div class="slide slide-left">
+            <h2>Parousia - The Wedding</h2>
+            <ul>
+                <li>A marriage between Christ and the Church</li>
+                <li>The Church adorned like a bride on her wedding day</li>
+                <li>In Easter Vigil, the darkened Church is clothed in light</li>
+                <li>We anticipate when God will be all in all</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <img src="stjhn.jpg" alt="St. John Henry Newman" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+
+        <div class="slide slide-left">
+            <h2>Newman's Journey to the Light</h2>
+            <ul>
+                <li>As an Anglican priest, he felt strongly called to do God's work</li>
+                <li>Traveled to Italy to study early church fathers</li>
+                <li>In Sicily he fell sick and nearly died</li>
+                <li>Almost unconsciously he cried out to his friends:</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <div class="quote">
+                "I shall not die, for I have not sinned against the <span class="highlight">light</span>."
+            </div>
+        </div>
+
+        <div class="slide">
+            <video width="100%" height="100%" controls>
+                <source src="./stjhn.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="slide">
+            <h2>Lead, Kindly Light</h2>
+            <div class="quote">
+                Lead, Kindly Light,<br>
+                Amid the encircling gloom,<br>
+                Lead Thou me on!<br>
+                The night is dark, and I am far from home—<br>
+                Lead Thou me on!<br>
+                Keep Thou my feet; I do not ask to see<br>
+                The distant scene—one step enough for me.
+            </div>
+        </div>
+
+        <div class="slide slide-left">
+            <h2>Reflection</h2>
+            <p style="margin-bottom: 1vw;">What is one "darkness" in your life right now that needs a "next step" of light?</p>
+            <div style="display: flex; gap: 2vw; width: 100%; font-size: 1.5vw; margin-top: 1vw;">
+                <div style="flex: 1;">
+                    <p style="font-weight: 600; color: #8e44ad;">Scripture:</p>
+                    <p>Genesis 1:1-4</p>
+                    <p>Exodus 13:21</p>
+                    <p>Isaiah 9:2</p>
+                    <p>Isaiah 9:6</p>
+                    <p>John 1:1-5</p>
+                    <p>Revelation 19:6-8</p>
+                </div>
+                <div style="flex: 1;">
+                    <p style="font-weight: 600;">Lead, Kindly Light:</p>
+                    <p>Lead, Kindly Light,</p>
+                    <p>Amid the encircling gloom,</p>
+                    <p>Lead Thou me on!</p>
+                    <p>The night is dark, and I am far from home—</p>
+                    <p>Lead Thou me on!</p>
+                    <p>Keep Thou my feet; I do not ask to see</p>
+                    <p>The distant scene—one step enough for me.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h1>Lauds Prayers and Intercessions</h1>
+        </div>
+
+        <div class="slide slide-left">
+            <ul>
+                <li>Let us pray to the Father, the all-powerful God, who raised up Jesus, our prince and our Saviour.<br><span class="highlight">– Glorify us, Lord, with the glory of Christ.</span></li>
+                <li>Father, you brought your beloved Son from the darkness of death to the light of glory; let us enter into the regions of your own wonderful light.<br><span class="highlight">– Glorify us, Lord, with the glory of Christ.</span></li>
+            </ul>
+        </div>
+
+        <div class="slide slide-left">
+            <ul>
+                <li>You saved us through faith in Jesus Christ; help us to live today in the grace of our baptism.<br><span class="highlight">– Glorify us, Lord, with the glory of Christ.</span></li>
+                <li>You have told us to seek the things that are in heaven; enable us to resist the attraction of sin.<br><span class="highlight">– Glorify us, Lord, with the glory of Christ.</span></li>
+            </ul>
+        </div>
+
+        <div class="slide slide-left">
+            <ul>
+                <li>Reveal the riches of our hidden life in Christ that men may see the signs of the new heaven and the new earth.<br><span class="highlight">– Glorify us, Lord, with the glory of Christ.</span></li>
+                <li>(... offering our own prayer intentions) <br><span class="highlight">– Glorify us, Lord, with the glory of Christ.</span></li>
+            </ul>
+        </div>
+        
+        <div class="slide">
+            <h2>Our Father...</h2>
+        </div>
+
+        <div class="slide slide-left">
+            <ul style="list-style: none; padding: 7vw;">
+                <li>Almighty, ever-living God, bring us to the joy of your heavenly city: so that we, your little flock, may follow where Christ, our Good Shepherd, has gone before us by the power of his resurrection.</li>
+                <li>Who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever.<br><span class="highlight">Amen.</span></li>
+            </ul>
+        </div>
+
+        <div class="slide slide-left">
+            <ul style="list-style: none; padding: 7vw;">
+                <li>The Lord bless us, and keep us from all evil, and bring us to everlasting life.<br><span class="highlight">Amen.</span></li>
+            </ul>
+        </div>
+        
+        <div class="slide slide-left">
+            <h1>Announcements</h1>
+        </div>
+
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn" onclick="prevSlide()">←</button>
+            <button class="control-btn" onclick="nextSlide()">→</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            history.pushState(null, null, `#slide-${index + 1}`);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function getSlideFromHash() {
+            const hash = window.location.hash;
+            const match = hash.match(/#slide-(\d+)/);
+            if (match) {
+                const slideNum = parseInt(match[1], 10);
+                if (slideNum >= 1 && slideNum <= totalSlides) {
+                    return slideNum - 1;
+                }
+            }
+            return 0;
+        }
+
+        // Initialize from hash on page load
+        window.addEventListener('load', () => {
+            const initialSlide = getSlideFromHash();
+            currentSlide = initialSlide;
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+        });
+
+        // Handle browser back/forward
+        window.addEventListener('hashchange', () => {
+            const slideIndex = getSlideFromHash();
+            currentSlide = slideIndex;
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        document.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                nextSlide();
+            } else if (e.deltaY < 0) {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>
