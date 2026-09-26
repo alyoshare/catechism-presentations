@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is the Bible All About? — Session #810</title>
+    <style>
+        :root {
+            --bg: #080a15;
+            --bg2: #131829;
+            --ink: #f4f1ea;
+            --muted: #98a1bd;
+            --gold: #e9b872;
+            --gold-soft: #f7e0bb;
+            --violet: #a894e8;
+            --red: #f0716f;
+            --green: #6fcf97;
+            --line: rgba(233, 184, 114, 0.20);
+            --card: rgba(255, 255, 255, 0.045);
+            --card-line: rgba(255, 255, 255, 0.10);
+            --sans: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            --serif: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', Palatino, Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .stage {
+            width: 100%;
+            height: 100%;
+            max-width: 177.78vh;
+            max-height: 56.25vw;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+            container-type: size;
+            background:
+                radial-gradient(120% 90% at 50% 0%, #1c2242 0%, rgba(28, 34, 66, 0) 60%),
+                radial-gradient(90% 70% at 50% 100%, #241a2e 0%, rgba(36, 26, 46, 0) 65%),
+                linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+        }
+
+        .stage::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(130% 100% at 50% 50%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%);
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5cqw 7cqw 6cqw;
+        }
+
+        .slide.active {
+            display: flex;
+            animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(0.8cqw); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .slide.top {
+            justify-content: flex-start;
+        }
+
+        .eyebrow {
+            font-size: 1.15cqw;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.4cqw;
+        }
+
+        .eyebrow .dim {
+            color: var(--muted);
+            letter-spacing: 0.18em;
+        }
+
+        h1 {
+            font-family: var(--serif);
+            font-size: 6.2cqw;
+            line-height: 1.04;
+            font-weight: 400;
+            letter-spacing: -0.015em;
+        }
+
+        h2 {
+            font-size: 3.5cqw;
+            line-height: 1.12;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 1cqw;
+        }
+
+        .lede {
+            font-size: 1.9cqw;
+            color: var(--muted);
+            line-height: 1.55;
+            font-weight: 500;
+        }
+
+        .gold {
+            color: var(--gold);
+        }
+
+        .serif {
+            font-family: var(--serif);
+        }
+
+        .rule {
+            width: 7cqw;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1.6cqw 0;
+        }
+
+        .rv {
+            opacity: 0;
+            transform: translateY(1.1cqw);
+            transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .rv.is-shown {
+            opacity: 1;
+            transform: none;
+        }
+
+        .rv-l {
+            transform: translateX(-1.6cqw);
+        }
+
+        .rv-s {
+            transform: scale(0.9);
+        }
+
+        .rv-s.is-shown {
+            transform: none;
+        }
+
+        .rv-fade {
+            transform: none;
+        }
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1cqw;
+            width: 100%;
+            max-width: 74cqw;
+        }
+
+        .stack.narrow {
+            max-width: 62cqw;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--card-line);
+            border-radius: 1.4cqw;
+            padding: 1.7cqw 2.2cqw;
+            text-align: left;
+        }
+
+        .rows {
+            display: flex;
+            flex-direction: column;
+            gap: 1.15cqw;
+            width: 100%;
+            max-width: 72cqw;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 1.7cqw;
+            background: var(--card);
+            border: 1px solid var(--card-line);
+            border-radius: 1.2cqw;
+            padding: 1.5cqw 2cqw;
+            text-align: left;
+        }
+
+        .row .ico {
+            flex: 0 0 auto;
+            width: 3.4cqw;
+            height: 3.4cqw;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(233, 184, 114, 0.12);
+            border: 1px solid var(--line);
+        }
+
+        .row .ico svg {
+            width: 2cqw;
+            height: 2cqw;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .row .txt {
+            font-size: 2.15cqw;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .row .sub {
+            display: block;
+            font-size: 1.35cqw;
+            color: var(--muted);
+            font-weight: 500;
+            margin-top: 0.35cqw;
+        }
+
+        .verse {
+            font-family: var(--serif);
+            font-size: 2.05cqw;
+            line-height: 1.5;
+            border-left: 3px solid var(--gold);
+            padding: 0.3cqw 0 0.3cqw 1.8cqw;
+            text-align: left;
+        }
+
+        .ref {
+            display: block;
+            font-family: var(--sans);
+            font-size: 1.15cqw;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            margin-top: 0.9cqw;
+        }
+
+        .ccc {
+            background: rgba(233, 184, 114, 0.09);
+            border: 1px solid rgba(233, 184, 114, 0.26);
+            border-radius: 1.2cqw;
+            padding: 1.5cqw 1.8cqw;
+            text-align: left;
+            font-size: 1.6cqw;
+            line-height: 1.5;
+            color: var(--gold-soft);
+        }
+
+        .ccc .tag {
+            display: block;
+            font-size: 1.05cqw;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            margin-top: 0.8cqw;
+            opacity: 0.8;
+        }
+
+        .art {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hint {
+            position: absolute;
+            bottom: 4.2cqw;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.05cqw;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.65;
+            white-space: nowrap;
+        }
+
+        .edge {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10cqw;
+            display: grid;
+            place-items: center;
+            pointer-events: none;
+            opacity: 0.22;
+            transition: opacity 0.3s;
+            z-index: 5;
+        }
+        .edge svg {
+            width: 2.2cqw;
+            height: 2.2cqw;
+            stroke: var(--ink);
+            fill: none;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .edge-l { left: 0; }
+        .edge-r { right: 0; }
+
+        body.hover-l .edge-l,
+        body.hover-r .edge-r {
+            opacity: 0.7;
+        }
+
+        .counter {
+            position: absolute;
+            bottom: 3.6cqw;
+            right: 3.6cqw;
+            font-size: 1.05cqw;
+            color: var(--muted);
+            letter-spacing: 0.14em;
+            z-index: 6;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 3.75cqw;
+            left: 3.6cqw;
+            display: flex;
+            gap: 0.5cqw;
+            z-index: 6;
+        }
+
+        .dots i {
+            width: 0.62cqw;
+            height: 0.62cqw;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            transition: background 0.35s, transform 0.35s;
+        }
+
+        .dots i.on {
+            background: var(--gold);
+            transform: scale(1.25);
+        }
+
+        .bar {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0.32cqw;
+            background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+            z-index: 7;
+            transition: width 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 0 1.6cqw rgba(233, 184, 114, 0.55);
+        }
+
+        .vote {
+            display: flex;
+            align-items: center;
+            gap: 1.8cqw;
+            background: linear-gradient(100deg, rgba(233, 184, 114, 0.13), rgba(255, 255, 255, 0.03));
+            border: 1px solid var(--line);
+            border-radius: 1.3cqw;
+            padding: 1.15cqw 2cqw;
+            text-align: left;
+        }
+
+        .vote .num {
+            flex: 0 0 auto;
+            width: 2.3cqw;
+            height: 2.3cqw;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            font-size: 1.1cqw;
+            font-weight: 700;
+        }
+
+        .vote .txt {
+            font-size: 1.95cqw;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .wrong {
+            display: flex;
+            align-items: center;
+            gap: 1.5cqw;
+            background: rgba(240, 113, 111, 0.07);
+            border: 1.5px solid rgba(240, 113, 111, 0.32);
+            border-radius: 1.1cqw;
+            padding: 1.35cqw 1.8cqw;
+            text-align: left;
+        }
+
+        .wrong .x {
+            flex: 0 0 auto;
+            width: 2.2cqw;
+            height: 2.2cqw;
+            border-radius: 0.5cqw;
+            background: var(--red);
+            color: #1a0d10;
+            display: grid;
+            place-items: center;
+            font-size: 1.4cqw;
+            font-weight: 800;
+            transform: rotate(-8deg);
+        }
+
+        .wrong .txt {
+            font-size: 1.85cqw;
+            font-weight: 600;
+            color: #ffd9d8;
+            line-height: 1.25;
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.1cqw 1.6cqw;
+            width: 100%;
+            max-width: 76cqw;
+        }
+
+        .chip {
+            display: flex;
+            align-items: center;
+            gap: 1.2cqw;
+            background: rgba(111, 207, 151, 0.08);
+            border: 1px solid rgba(111, 207, 151, 0.26);
+            border-radius: 0.9cqw;
+            padding: 1cqw 1.5cqw;
+            text-align: left;
+            font-size: 2.64cqw;
+            font-weight: 600;
+            color: #d6f2e2;
+            line-height: 1.3;
+        }
+
+        .chip::before {
+            content: '';
+            flex: 0 0 auto;
+            width: 0.7cqw;
+            height: 0.7cqw;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        .photo {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 36cqw;
+            border-radius: 1.1cqw;
+            border: 1px solid var(--card-line);
+        }
+
+        .stages {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.1cqw 1.5cqw;
+            width: 100%;
+            max-width: 74cqw;
+            margin: 2cqw auto 0;
+        }
+
+        .tlrow {
+            display: flex;
+            align-items: center;
+            gap: 1.5cqw;
+            background: var(--card);
+            border: 1px solid var(--card-line);
+            border-left: 3px solid var(--gold);
+            border-radius: 1cqw;
+            padding: 1.5cqw 1.8cqw;
+            text-align: left;
+        }
+
+        .tlrow .n {
+            flex: 0 0 auto;
+            width: 2.4cqw;
+            height: 2.4cqw;
+            border-radius: 50%;
+            background: rgba(233, 184, 114, 0.14);
+            border: 1px solid var(--line);
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            font-size: 1.15cqw;
+            font-weight: 700;
+        }
+
+        .tlrow .t {
+            font-size: 2.05cqw;
+            font-weight: 600;
+            color: var(--gold-soft);
+            line-height: 1.25;
+        }
+
+        .video {
+            width: 100%;
+            max-width: 62cqw;
+        }
+
+        .vframe {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            border-radius: 1.3cqw;
+            overflow: hidden;
+            background: linear-gradient(150deg, #1a1f38, #0d1020);
+            border: 1px solid var(--line);
+            box-shadow: 0 1.6cqw 5cqw rgba(0, 0, 0, 0.55);
+        }
+
+        .vframe iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .vclose {
+            position: absolute;
+            top: 0.7cqw;
+            right: 0.7cqw;
+            z-index: 3;
+            width: 2.1cqw;
+            height: 2.1cqw;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(8, 10, 21, 0.82);
+            color: #fff;
+            font-size: 1cqw;
+            line-height: 1;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            opacity: 0.55;
+            transition: opacity 0.25s, background 0.25s;
+        }
+
+        .vclose:hover {
+            opacity: 1;
+            background: var(--red);
+            border-color: var(--red);
+        }
+
+        .vposter {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            border: 0;
+            background: transparent;
+            padding: 0;
+        }
+
+        .vposter .spines {
+            position: absolute;
+            inset: 0;
+            opacity: 0.4;
+        }
+
+        .vposter .ring {
+            position: absolute;
+            width: 8cqw;
+            height: 8cqw;
+            border-radius: 50%;
+            background: rgba(233, 184, 114, 0.16);
+            border: 1px solid var(--line);
+            display: grid;
+            place-items: center;
+            transition: transform 0.35s, background 0.35s;
+        }
+
+        .vposter:hover .ring {
+            transform: scale(1.09);
+            background: rgba(233, 184, 114, 0.28);
+        }
+
+        .vposter .ring svg {
+            width: 2.8cqw;
+            height: 2.8cqw;
+            margin-left: 0.3cqw;
+            fill: var(--gold-soft);
+        }
+
+        .vlabel {
+            position: absolute;
+            bottom: 1.2cqw;
+            left: 1.4cqw;
+            font-size: 1.05cqw;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .vmeta {
+            margin-top: 1cqw;
+            font-size: 1.3cqw;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .vmeta b {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .vprompt {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.9cqw;
+            padding: 2cqw;
+            background: rgba(8, 10, 21, 0.94);
+            text-align: center;
+        }
+
+        .vprompt.on {
+            display: flex;
+        }
+
+        .vprompt p {
+            font-size: 1.25cqw;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .vprompt input {
+            font-family: var(--sans);
+            font-size: 1.15cqw;
+            padding: 0.7cqw 1cqw;
+            width: 80%;
+            border-radius: 0.6cqw;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--ink);
+            text-align: center;
+            outline: none;
+        }
+
+        .vprompt input:focus {
+            border-color: var(--gold);
+        }
+
+        .vprompt button {
+            font-family: var(--sans);
+            font-size: 1.05cqw;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--bg);
+            background: var(--gold);
+            border: 0;
+            border-radius: 0.6cqw;
+            padding: 0.7cqw 1.6cqw;
+            cursor: pointer;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 2.6cqw;
+            align-items: center;
+            width: 100%;
+            max-width: 78cqw;
+            text-align: left;
+        }
+
+        .split.wide-left {
+            grid-template-columns: 1fr 1.15fr;
+        }
+
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.35cqw;
+            overflow: hidden;
+            border-radius: 1.1cqw;
+        }
+
+        .tbl th {
+            background: rgba(233, 184, 114, 0.14);
+            color: var(--gold-soft);
+            font-size: 1cqw;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 1cqw 1.1cqw;
+            text-align: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .tbl td {
+            padding: 1.05cqw 1.1cqw;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            color: var(--muted);
+        }
+
+        .tbl td:first-child {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .tbl tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .tbl tr.hero td {
+            background: rgba(233, 184, 114, 0.13);
+            color: var(--gold-soft);
+            font-weight: 700;
+        }
+
+        .fork-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2cqw;
+            width: 100%;
+            max-width: 76cqw;
+        }
+
+        .fork {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.4cqw;
+            width: 100%;
+        }
+
+        .fork .opt {
+            border-radius: 1.2cqw;
+            border: 1.5px solid var(--card-line);
+            background: var(--card);
+            padding: 1.4cqw 1cqw;
+        }
+
+        .fork .opt .k {
+            font-size: 1cqw;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .fork .opt .v {
+            font-family: var(--serif);
+            font-size: 2.6cqw;
+            margin-top: 0.5cqw;
+            line-height: 1.1;
+        }
+
+        .fork .opt .d {
+            font-size: 1.2cqw;
+            color: var(--muted);
+            margin-top: 0.6cqw;
+            line-height: 1.4;
+        }
+
+        .fork .opt.right {
+            border-color: var(--gold);
+            background: rgba(233, 184, 114, 0.14);
+        }
+
+        .fork .opt.right .v {
+            color: var(--gold-soft);
+        }
+
+        .verdict-line {
+            font-size: 1.75cqw;
+            font-weight: 600;
+            color: var(--gold-soft);
+        }
+
+        .saints {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2cqw;
+            width: 100%;
+            max-width: 74cqw;
+            text-align: left;
+        }
+
+        .saint {
+            background: var(--card);
+            border: 1px solid var(--card-line);
+            border-radius: 1.4cqw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .slot {
+            position: relative;
+            flex: 0 0 34%;
+            background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.035) 0 10px, rgba(255, 255, 255, 0) 10px 20px), #10142a;
+            border-right: 1px solid var(--card-line);
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .slot .ph {
+            text-align: center;
+            padding: 1cqw;
+        }
+
+        .slot .ph svg {
+            width: 2.6cqw;
+            height: 2.6cqw;
+            stroke: rgba(233, 184, 114, 0.5);
+            fill: none;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-bottom: 0.7cqw;
+        }
+
+        .slot .ph code {
+            display: block;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 1.05cqw;
+            color: var(--gold);
+            opacity: 0.9;
+        }
+
+        .slot .ph small {
+            display: block;
+            font-size: 0.95cqw;
+            color: var(--muted);
+            margin-top: 0.4cqw;
+        }
+
+        .slot img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .saint .body {
+            padding: 1.3cqw 1.5cqw;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .saint h3 {
+            font-size: 1.7cqw;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .saint .yrs {
+            font-size: 1.05cqw;
+            color: var(--gold);
+            letter-spacing: 0.14em;
+            font-weight: 700;
+            margin-top: 0.35cqw;
+        }
+
+        .saint p {
+            font-size: 1.22cqw;
+            color: var(--muted);
+            line-height: 1.45;
+            margin-top: 0.75cqw;
+        }
+
+        .saint blockquote {
+            font-family: var(--serif);
+            font-size: 1.32cqw;
+            font-style: italic;
+            color: var(--gold-soft);
+            margin-top: 0.8cqw;
+            line-height: 1.35;
+        }
+
+        .banner {
+            margin-top: 1.3cqw;
+            font-size: 1.6cqw;
+            font-weight: 600;
+            color: var(--gold-soft);
+        }
+
+        .banner span {
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .arrowrow {
+            display: flex;
+            align-items: stretch;
+            gap: 1.4cqw;
+            width: 100%;
+            max-width: 76cqw;
+        }
+
+        .arrowrow .side {
+            flex: 1;
+            border-radius: 1.2cqw;
+            padding: 1.5cqw 1.7cqw;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .arrowrow .old {
+            background: rgba(168, 148, 232, 0.09);
+            border: 1px solid rgba(168, 148, 232, 0.3);
+        }
+
+        .arrowrow .new {
+            background: rgba(233, 184, 114, 0.1);
+            border: 1px solid var(--line);
+        }
+
+        .arrowrow .lbl {
+            font-size: 0.95cqw;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.7cqw;
+        }
+
+        .arrowrow .old .lbl { color: var(--violet); }
+        .arrowrow .new .lbl { color: var(--gold); }
+
+        .arrowrow .txt {
+            font-family: var(--serif);
+            font-size: 1.5cqw;
+            line-height: 1.45;
+        }
+
+        .arrowrow .new .txt {
+            font-family: var(--sans);
+            font-size: 1.6cqw;
+            font-weight: 700;
+            color: var(--gold-soft);
+        }
+
+        .arrowrow .arw {
+            flex: 0 0 auto;
+            align-self: center;
+            width: 2.6cqw;
+            height: 2.6cqw;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .notes-app {
+            width: 100%;
+            max-width: 70cqw;
+            background: #141a33;
+            border: 1px solid var(--card-line);
+            border-radius: 1.4cqw;
+            overflow: hidden;
+            text-align: left;
+            box-shadow: 0 1.6cqw 5cqw rgba(0, 0, 0, 0.5);
+        }
+
+        .notes-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.6cqw;
+            padding: 0.95cqw 1.3cqw;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--card-line);
+        }
+
+        .notes-bar i {
+            width: 0.72cqw;
+            height: 0.72cqw;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .notes-bar span {
+            margin-left: 0.6cqw;
+            font-size: 1cqw;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .notes-body {
+            padding: 1.5cqw 1.9cqw;
+            display: flex;
+            flex-direction: column;
+            gap: 1.15cqw;
+            background-image: repeating-linear-gradient(transparent 0 2.3cqw, rgba(255, 255, 255, 0.045) 2.3cqw calc(2.3cqw + 1px));
+        }
+
+        .q {
+            display: flex;
+            gap: 1.1cqw;
+            align-items: flex-start;
+        }
+
+        .q .n {
+            flex: 0 0 auto;
+            font-size: 1.3cqw;
+            font-weight: 800;
+            color: var(--gold);
+            font-variant-numeric: tabular-nums;
+            min-width: 1.6cqw;
+        }
+
+        .q .t {
+            font-size: 1.62cqw;
+            line-height: 1.45;
+            color: #e8eaf4;
+        }
+
+        .q .t em {
+            color: var(--gold-soft);
+            font-style: normal;
+        }
+
+        .hymn {
+            width: 100%;
+            max-width: 86cqw;
+            margin: 1.8cqw auto 0;
+            font-family: var(--serif);
+            font-size: 1.9cqw;
+            line-height: 1.9;
+            color: #e9e6de;
+            text-align: left;
+        }
+
+        .hymn.cols2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 2.5cqw;
+        }
+
+        .hymn.single {
+            font-size: 2.2cqw;
+            line-height: 2.1;
+            text-align: left;
+        }
+
+        .qmark {
+            font-family: var(--serif);
+            font-size: 18.2cqw;
+            line-height: 0.8;
+            background: linear-gradient(180deg, #fff3dd 0%, var(--gold) 55%, rgba(233, 184, 114, 0.25) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0.8cqw 0 0.4cqw;
+        }
+
+        .big-why {
+            font-family: var(--serif);
+            font-size: 5.18cqw;
+            line-height: 1.1;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            max-width: 70cqw;
+        }
+
+        .orbit {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orbit ~ p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .orbit.a {
+            width: 34cqw;
+            height: 34cqw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 44s linear infinite;
+        }
+
+        .orbit.b {
+            width: 46cqw;
+            height: 46cqw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 74s linear infinite reverse;
+            opacity: 0.55;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .orbit i {
+            position: absolute;
+            top: -0.3cqw;
+            left: 50%;
+            width: 0.6cqw;
+            height: 0.6cqw;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.28;
+        }
+
+        .greek {
+            font-family: var(--serif);
+            font-size: 3.4cqw;
+            color: var(--gold-soft);
+            letter-spacing: 0.04em;
+        }
+
+        @keyframes risey {
+            from { opacity: 0; transform: translateY(0.4cqw); }
+            to { opacity: 0.7; transform: translateY(-0.5cqw); }
+        }
+
+        .mote {
+            animation: risey 4.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="stage" id="stage">
+
+        <div class="slide active">
+            <h1 class="rv">What is the Bible<br>All About?</h1>
+            <div class="rule rv rv-fade"></div>
+            <p class="lede rv rv-fade">How we got the Bible &amp; why we can trust it</p>
+            <svg class="art rv rv-s" style="width: 34cqw; margin-top: 2.4cqw;" viewBox="0 0 420 250" role="img" aria-label="An open Bible with light pouring out of it">
+                <defs>
+                    <radialGradient id="gGlow" cx="50%" cy="46%" r="50%">
+                        <stop offset="0%" stop-color="#ffe9c2" stop-opacity="0.5"/>
+                        <stop offset="52%" stop-color="#e9b872" stop-opacity="0.14"/>
+                        <stop offset="100%" stop-color="#e9b872" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="gPageL" x1="0" y1="0" x2="0.3" y2="1">
+                        <stop offset="0%" stop-color="#fdf7ea"/>
+                        <stop offset="100%" stop-color="#d8c7a4"/>
+                    </linearGradient>
+                    <linearGradient id="gPageR" x1="1" y1="0" x2="0.7" y2="1">
+                        <stop offset="0%" stop-color="#f8eeda"/>
+                        <stop offset="100%" stop-color="#c9b894"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="210" cy="122" r="126" fill="url(#gGlow)"/>
+                <g fill="#ffe0aa">
+                    <polygon points="210,150 205,2 213,2" opacity="0.26"/>
+                    <polygon points="210,150 188,10 196,8" opacity="0.15"/>
+                    <polygon points="210,150 232,10 224,8" opacity="0.15"/>
+                    <polygon points="210,150 166,30 173,26" opacity="0.1"/>
+                    <polygon points="210,150 254,26 261,30" opacity="0.1"/>
+                    <polygon points="210,150 140,58 146,54" opacity="0.07"/>
+                    <polygon points="210,150 280,54 286,58" opacity="0.07"/>
+                </g>
+                <g stroke="#8a7a5a" stroke-width="2" stroke-linecap="round" opacity="0.34" fill="none">
+                    <path d="M78,138 C118,131 158,139 194,156"/>
+                    <path d="M78,152 C118,145 158,153 194,170"/>
+                    <path d="M78,166 C118,159 158,167 194,184"/>
+                    <path d="M78,180 C118,173 158,181 194,198"/>
+                    <path d="M342,138 C302,131 262,139 226,156"/>
+                    <path d="M342,152 C302,145 262,153 226,170"/>
+                    <path d="M342,166 C302,159 262,167 226,184"/>
+                    <path d="M342,180 C302,173 262,181 226,198"/>
+                </g>
+                <path d="M210,152 C186,124 122,112 60,120 L60,182 C122,174 186,186 210,214 Z" fill="url(#gPageL)"/>
+                <path d="M210,152 C234,124 298,112 360,120 L360,182 C298,174 234,186 210,214 Z" fill="url(#gPageR)"/>
+                <path d="M210,152 L210,214" stroke="#a08e69" stroke-width="2.5" opacity="0.7"/>
+                <g fill="#ffe6b8">
+                    <circle class="mote" cx="150" cy="70" r="2.1" style="animation-delay:0s"/>
+                    <circle class="mote" cx="268" cy="52" r="1.7" style="animation-delay:1.1s"/>
+                    <circle class="mote" cx="210" cy="88" r="2.4" style="animation-delay:2s"/>
+                    <circle class="mote" cx="118" cy="108" r="1.5" style="animation-delay:2.8s"/>
+                    <circle class="mote" cx="300" cy="96" r="1.9" style="animation-delay:3.6s"/>
+                </g>
+            </svg>
+            <p class="hint">Click the left or right edge to move · click the middle to reveal</p>
+        </div>
+        <div class="slide">
+            <p class="eyebrow">Opening prayer</p>
+            <div class="hymn cols2">
+                <div>
+                    <p>This day at thy creating Word</p>
+                    <p>First over the earth the light was poured:</p>
+                    <p>O Lord, this day upon us shine</p>
+                    <p>And fill our souls with light divine.</p>
+                </div>
+                <div>
+                    <p>This day the Lord for sinners slain</p>
+                    <p>In might victorious rose again:</p>
+                    <p>O Jesus, may we raisèd be</p>
+                    <p>From death of sin to life in thee!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="eyebrow">Opening prayer</p>
+            <div class="hymn cols2">
+                <div>
+                    <p>This day the Holy Spirit came</p>
+                    <p>With fiery tongues of cloven flame:</p>
+                    <p>O Spirit, fill our hearts this day</p>
+                    <p>With grace to hear and grace to pray.</p>
+                </div>
+                <div>
+                    <p>O day of light and life and grace,</p>
+                    <p>From earthly toil a resting-place,</p>
+                    <p>The hallowed hours, blest gift of love,</p>
+                    <p>Give we again to God above.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="eyebrow">Opening prayer</p>
+            <div class="hymn single">
+                <p>All praise to God the Father be,</p>
+                <p>All praise, eternal Son, to thee,</p>
+                <p>Whom, with the Spirit, we adore</p>
+                <p>For ever and for evermore.</p>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Opening check-in</p>
+            <h2 class="rv">Quick check-in: raise your hand if…</h2>
+            <div class="stack narrow" style="margin-top: 1.1cqw; gap: 0.8cqw;">
+                <div class="vote rv rv-l">
+                    <span class="num">1</span>
+                    <span class="txt">I have opened a Bible in the last week.</span>
+                </div>
+                <div class="vote rv rv-l">
+                    <span class="num">2</span>
+                    <span class="txt">I have opened a Bible in the last month.</span>
+                </div>
+                <div class="vote rv rv-l">
+                    <span class="num">3</span>
+                    <span class="txt">I have a Bible at home that I've actually read —<br>not just used as a coaster.</span>
+                </div>
+                <div class="vote rv rv-l">
+                    <span class="num">4</span>
+                    <span class="txt">I've read a whole book of the Bible on my own.</span>
+                </div>
+                <div class="vote rv rv-l">
+                    <span class="num">5</span>
+                    <span class="txt">I've wanted to read the Bible but didn't know where to start.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Video 1 <span class="dim">· the big picture</span></p>
+            <h2 class="rv">The Bible: one big story</h2>
+            <div class="video" style="margin-top: 1.2cqw; max-width: 47cqw;">
+                <div class="vframe" data-video="video1">
+                    <button class="vposter" type="button" aria-label="Play video 1">
+                        <svg class="spines" viewBox="0 0 320 180" preserveAspectRatio="none" aria-hidden="true">
+                            <g fill="#e9b872" opacity="0.5">
+                                <rect x="14" y="70" width="9" height="110" rx="1.5"/>
+                                <rect x="27" y="84" width="7" height="96" rx="1.5"/>
+                                <rect x="38" y="62" width="11" height="118" rx="1.5"/>
+                                <rect x="53" y="92" width="6" height="88" rx="1.5"/>
+                                <rect x="63" y="76" width="10" height="104" rx="1.5"/>
+                                <rect x="78" y="98" width="7" height="82" rx="1.5"/>
+                                <rect x="90" y="66" width="9" height="114" rx="1.5"/>
+                                <rect x="104" y="88" width="12" height="92" rx="1.5"/>
+                                <rect x="121" y="74" width="7" height="106" rx="1.5"/>
+                                <rect x="133" y="96" width="10" height="84" rx="1.5"/>
+                                <rect x="148" y="80" width="6" height="100" rx="1.5"/>
+                                <rect x="159" y="64" width="11" height="116" rx="1.5"/>
+                                <rect x="175" y="90" width="8" height="90" rx="1.5"/>
+                                <rect x="188" y="72" width="10" height="108" rx="1.5"/>
+                                <rect x="203" y="94" width="7" height="86" rx="1.5"/>
+                                <rect x="215" y="68" width="12" height="112" rx="1.5"/>
+                                <rect x="232" y="86" width="8" height="94" rx="1.5"/>
+                                <rect x="245" y="78" width="10" height="102" rx="1.5"/>
+                                <rect x="260" y="96" width="7" height="84" rx="1.5"/>
+                                <rect x="272" y="70" width="11" height="110" rx="1.5"/>
+                                <rect x="288" y="88" width="8" height="92" rx="1.5"/>
+                            </g>
+                            <rect x="0" y="176" width="320" height="4" fill="#e9b872" opacity="0.35"/>
+                        </svg>
+                        <span class="ring"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+                        <span class="vlabel">click to play</span>
+                    </button>
+                    <div class="vprompt">
+                        <p>Paste the YouTube link or ID for <b>Fr. Mike Schmitz — The Bible in a Nutshell</b><br>and it will load and be remembered for next time.</p>
+                        <input type="text" placeholder="https://youtube.com/watch?v=… or a video ID" aria-label="YouTube link or ID">
+                        <button type="button">Load video</button>
+                    </div>
+                </div>
+                <p class="vmeta"><b>The Bible in a Nutshell</b> · Fr. Mike Schmitz</p>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">The plot so far</p>
+            <h2 class="rv">One story, six stages</h2>
+            <div class="stages">
+                <div class="tlrow rv rv-l"><span class="n">1</span><span class="t">Creation &amp; the Fall</span></div>
+                <div class="tlrow rv rv-l"><span class="n">2</span><span class="t">Promise to Abraham</span></div>
+                <div class="tlrow rv rv-l"><span class="n">3</span><span class="t">Exodus &amp; the Desert</span></div>
+                <div class="tlrow rv rv-l"><span class="n">4</span><span class="t">The Davidic Kingdom</span></div>
+                <div class="tlrow rv rv-l"><span class="n">5</span><span class="t">The Coming of Christ</span></div>
+                <div class="tlrow rv rv-l"><span class="n">6</span><span class="t">Resurrection &amp; the Church</span></div>
+            </div>
+            <p class="lede rv rv-fade" style="margin-top: 1.8cqw;">The Bible isn't a bunch of random stories. It's <span class="gold">one story</span> —<br>God's plan to save humanity. One universe, better plot.</p>
+        </div>
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Why bother?</p>
+            <h2 class="rv">Why read the Bible?</h2>
+            <div class="rows" style="margin-top: 1.8cqw;">
+                <div class="row rv rv-l">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 6.5C10 5 6.5 4.6 3 5v13c3.5-.4 7 0 9 1.5"/><path d="M12 6.5c2-1.5 5.5-1.9 9-1.5v13c-3.5-.4-7 0-9 1.5"/><path d="M12 6.5v13"/></svg></span>
+                    <span class="txt">It is the Word of God<span class="sub">Not a human opinion — a promise.</span></span>
+                </div>
+                <div class="row rv rv-l">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z"/></svg></span>
+                    <span class="txt">It gives us wisdom<span class="sub">Real answers, not vibes.</span></span>
+                </div>
+                <div class="row rv rv-l">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2.8c2.6 3.4 1.3 5.4.3 6.6-1.1 1.3-1.6 2.3-1.2 3.7"/><path d="M12 2.8c-2.6 3.4-1.3 5.4-.3 6.6 1.1 1.3 1.6 2.3 1.2 3.7"/><path d="M12 6.6c3 1.4 5 4.2 5 7.4a5 5 0 0 1-10 0c0-3.2 2-6 5-7.4Z"/></svg></span>
+                    <span class="txt">It lets us encounter God<span class="sub">Not just about God — Him.</span></span>
+                </div>
+                <div class="row rv rv-l">
+                    <span class="ico"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                    <span class="txt">It's like a love letter from God to you<span class="sub">Written to you. On purpose.</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="orbit a"><i></i></div>
+            <div class="orbit b"><i></i></div>
+            <p class="eyebrow rv rv-fade">The big question</p>
+            <p class="qmark rv rv-s">?</p>
+            <p class="big-why rv rv-fade">But… how did the Bible<br>actually get written?</p>
+            <p class="lede rv rv-fade" style="margin-top: 1.6cqw;">Like, what was the process? What do you think?</p>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Wrong answers only</p>
+            <h2 class="rv">How was the Bible written?</h2>
+            <div class="grid2" style="margin-top: 1.6cqw;">
+                <div class="wrong rv rv-s"><span class="x">✕</span><span class="txt">Dropped from heaven in seashells</span></div>
+                <div class="wrong rv rv-s"><span class="x">✕</span><span class="txt">God typing on a cosmic keyboard</span></div>
+                <div class="wrong rv rv-s"><span class="x">✕</span><span class="txt">God dictating like a boss to a secretary</span></div>
+                <div class="wrong rv rv-s"><span class="x">✕</span><span class="txt">God took over the author's hand (puppet mode)</span></div>
+                <div class="wrong rv rv-s"><span class="x">✕</span><span class="txt">Group project — everyone wrote whatever they wanted</span></div>
+                <div class="wrong rv rv-s"><span class="x">✕</span><span class="txt">AI generated it (before AI was even a thing)</span></div>
+            </div>
+            <p class="lede rv rv-fade" style="margin-top: 1.8cqw;">Some of these are jokes. But some people genuinely think the authors were just robots with a pen. That's not what happened.</p>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Video 2 <span class="dim">· how it actually works</span></p>
+            <h2 class="rv">How the Bible was actually written</h2>
+            <div class="video" style="margin-top: 1.6cqw; max-width: 58cqw;">
+                <div class="vframe" data-video="video2">
+                    <button class="vposter" type="button" aria-label="Play video 2">
+                        <svg class="spines" viewBox="0 0 320 180" preserveAspectRatio="none" aria-hidden="true">
+                            <g fill="#e9b872" opacity="0.5">
+                                <rect x="18" y="80" width="10" height="100" rx="1.5"/>
+                                <rect x="33" y="68" width="7" height="112" rx="1.5"/>
+                                <rect x="45" y="90" width="12" height="90" rx="1.5"/>
+                                <rect x="62" y="74" width="8" height="106" rx="1.5"/>
+                                <rect x="75" y="96" width="11" height="84" rx="1.5"/>
+                                <rect x="91" y="82" width="7" height="98" rx="1.5"/>
+                                <rect x="103" y="64" width="10" height="116" rx="1.5"/>
+                                <rect x="118" y="88" width="12" height="92" rx="1.5"/>
+                                <rect x="135" y="78" width="8" height="102" rx="1.5"/>
+                                <rect x="148" y="94" width="10" height="86" rx="1.5"/>
+                                <rect x="163" y="70" width="7" height="110" rx="1.5"/>
+                                <rect x="175" y="86" width="12" height="94" rx="1.5"/>
+                                <rect x="192" y="76" width="8" height="104" rx="1.5"/>
+                                <rect x="205" y="92" width="11" height="88" rx="1.5"/>
+                                <rect x="221" y="66" width="7" height="114" rx="1.5"/>
+                                <rect x="233" y="84" width="10" height="96" rx="1.5"/>
+                                <rect x="248" y="98" width="12" height="82" rx="1.5"/>
+                                <rect x="265" y="72" width="8" height="108" rx="1.5"/>
+                                <rect x="278" y="90" width="10" height="90" rx="1.5"/>
+                            </g>
+                            <rect x="0" y="176" width="320" height="4" fill="#e9b872" opacity="0.35"/>
+                        </svg>
+                        <span class="ring"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+                        <span class="vlabel">click to play</span>
+                    </button>
+                    <div class="vprompt">
+                        <p>Paste the YouTube link or ID for <b>BibleProject — How to Read the Bible</b><br>and it will load and be remembered for next time.</p>
+                        <input type="text" placeholder="https://youtube.com/watch?v=… or a video ID" aria-label="YouTube link or ID">
+                        <button type="button">Load video</button>
+                    </div>
+                </div>
+                <p class="vmeta"><b>What is the Bible?</b> · BibleProject</p>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Key takeaways</p>
+            <h2 class="rv">What the video told us</h2>
+            <div class="grid2" style="margin-top: 1.8cqw;">
+                <div class="chip rv rv-l">A small library, not one book</div>
+                <div class="chip rv rv-l">Many authors, over 1,000+ years</div>
+                <div class="chip rv rv-l">Old Testament: Torah, Prophets, Writings</div>
+                <div class="chip rv rv-l">New Testament: Gospels, Letters, Acts</div>
+                <div class="chip rv rv-l">Catholic Bibles add 7 more books</div>
+            </div>
+            <p class="lede rv rv-fade" style="margin-top: 1.8cqw;">Like a teacher handing you a project outline —<br>but you still write it in your own words. Except God's outline is perfect.</p>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">The word that answers it</p>
+            <h2 class="rv">What does "inspired" actually mean?</h2>
+            <div class="stack narrow" style="gap: 1.4cqw; max-width: 66cqw; margin-top: 1.8cqw;">
+                <div class="verse rv rv-l" style="font-size: 2.2cqw;">All Scripture is God-breathed and profitable for teaching, for reproof, for correction, and for training in righteousness.<span class="ref">2 Timothy 3:16</span></div>
+                <div class="verse rv rv-l" style="font-size: 2.2cqw;">Men spoke from God as they were carried along by the Holy Spirit.<span class="ref">2 Peter 1:21</span></div>
+                <div class="card rv rv-l" style="text-align: center; border-color: var(--line); background: rgba(233, 184, 114, 0.07); margin-top: 0.5cqw;">
+                    <p class="greek rv-fade" style="opacity: 1;">θεόπνευστος</p>
+                    <p class="lede" style="font-size: 1.5cqw; margin-top: 0.6cqw;"><span class="gold serif">theos</span> (God) + <span class="gold serif">pneuo</span> (to breathe)<br>= "God-breathed"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">What the Church teaches</p>
+            <h2 class="rv">Same word, spelled out</h2>
+            <div class="stack" style="gap: 1cqw; max-width: 68cqw; margin-top: 1.8cqw;">
+                <div class="row rv rv-l" style="padding: 1.3cqw 1.7cqw;">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M7 8h10"/></svg></span>
+                    <span class="txt" style="font-size: 1.9cqw;">God is the <u>author</u> of Scripture<span class="sub">CCC 105</span></span>
+                </div>
+                <div class="row rv rv-l" style="padding: 1.3cqw 1.7cqw;">
+                    <span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M13 20c0-3 1.6-5 3.6-5S20 17 20 20"/></svg></span>
+                    <span class="txt" style="font-size: 1.9cqw;">He chose <u>human authors</u> to write what He wanted<span class="sub">CCC 106</span></span>
+                </div>
+                <div class="row rv rv-l" style="padding: 1.3cqw 1.7cqw;">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-7-10a7 7 0 0 1 14 0c0 5.4-7 10-7 10Z"/><circle cx="12" cy="11" r="2.4"/></svg></span>
+                    <span class="txt" style="font-size: 1.9cqw;">Inspiration = God-breathed<span class="sub">The Holy Spirit carried them as they wrote</span></span>
+                </div>
+                <div class="row rv rv-l" style="padding: 1.3cqw 1.7cqw;">
+                    <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v18H6.5A2.5 2.5 0 0 1 4 18.5Z"/><path d="M8 8h7"/><path d="M8 12h5"/></svg></span>
+                    <span class="txt" style="font-size: 1.9cqw;">The Bible teaches truth <u>for our salvation</u><span class="sub">CCC 107</span></span>
+                </div>
+            </div>
+            <p class="lede rv rv-fade" style="margin-top: 1.6cqw;">God is the author. The authors are real. Both things are true at once.</p>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Why trust it?</p>
+            <h2 class="rv">Let's compare the evidence</h2>
+            <div class="rv rv-l" style="width: 100%; max-width: 78cqw; margin: 1.8cqw auto 0;">
+                <table class="tbl" style="font-size: 1.6cqw;">
+                    <thead>
+                        <tr>
+                            <th>Ancient work</th>
+                            <th>Written</th>
+                            <th>Earliest copies</th>
+                            <th>Copies known</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Plato's works</td>
+                            <td>~400 BC</td>
+                            <td>1,200 years later</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Virgil's <i>Aeneid</i></td>
+                            <td>~20 BC</td>
+                            <td>350 years later</td>
+                            <td>A few</td>
+                        </tr>
+                        <tr class="hero">
+                            <td>New Testament</td>
+                            <td>~50–100 AD</td>
+                            <td>30–50 years later</td>
+                            <td>5,000+ (Greek)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="lede" style="font-size: 1.5cqw; text-align: center; margin-top: 1.8cqw;">If you trust your history textbook about Plato,<br>you should absolutely trust the Gospels.</p>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">The "so what?"</p>
+            <h2 class="rv">But Jesus claimed to be God…</h2>
+            <p class="lede rv rv-fade" style="margin-bottom: 2cqw;">If Jesus really claimed divinity, there are only three options. Pick your character:</p>
+            <div class="fork-wrap">
+                <div class="fork">
+                    <div class="opt rv rv-s">
+                        <div class="k">Option A</div>
+                        <div class="v">Liar</div>
+                        <div class="d">He knew it was false and said it anyway.</div>
+                    </div>
+                    <div class="opt rv rv-s">
+                        <div class="k">Option B</div>
+                        <div class="v">Lunatic</div>
+                        <div class="d">He genuinely believed a delusion.</div>
+                    </div>
+                    <div class="opt right rv rv-s">
+                        <div class="k">Option C</div>
+                        <div class="v">Lord</div>
+                        <div class="d">He really is God.</div>
+                    </div>
+                </div>
+                <p class="verdict-line rv rv-fade">His teachings and His impact rule out the other two.</p>
+                <p class="lede rv rv-fade" style="font-size: 1.4cqw;">Nobody calls a liar or a madman the most influential teacher in human history —<br>and then writes the parables that keep happening anyway.</p>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Teachings · part 1</p>
+            <h2 class="rv">Teachings that changed the world</h2>
+            <div class="split" style="margin-top: 1.6cqw; align-items: center;">
+                <div class="stack narrow" style="gap: 1.2cqw;">
+                    <div class="card rv rv-l" style="border-color: var(--line);">
+                        <p class="verse" style="border: 0; padding: 0; font-size: 1.85cqw;">"Love your enemies and pray for those who persecute you."<span class="ref">Matthew 5:44</span></p>
+                    </div>
+                    <div class="card rv rv-l" style="border-color: var(--line);">
+                        <p class="verse" style="border: 0; padding: 0; font-size: 1.85cqw;">"The last will be first, and the first will be last."<span class="ref">Matthew 20:16</span></p>
+                    </div>
+                </div>
+                <div class="rv rv-l" style="width: 100%; display: flex; flex-direction: column; gap: 1.1cqw; align-items: center;">
+                    <svg style="width: 100%;" viewBox="0 0 260 200" role="img" aria-label="One figure chasing likes, one figure quietly shining">
+                        <g opacity="0.55">
+                            <circle cx="70" cy="86" r="26" fill="none" stroke="#98a1bd" stroke-width="2"/>
+                            <path d="M44 150c0-16 12-26 26-26s26 10 26 26" fill="none" stroke="#98a1bd" stroke-width="2"/>
+                            <g fill="#f0716f" opacity="0.8">
+                                <path d="M28 46c-4-4-4-9 0-12s9-3 12 1c3-4 9-5 12-1s4 8 0 12l-12 11Z"/>
+                                <path d="M112 34c-3.4-3.4-3.4-7.7 0-10.2s7.7-2.6 10.2.8c2.6-3.4 7.7-4.2 10.2-.8s3.4 6.8 0 10.2l-10.2 9.3Z"/>
+                            </g>
+                            <g fill="none" stroke="#98a1bd" stroke-width="1.6" opacity="0.7">
+                                <circle cx="34" cy="96" r="7"/><circle cx="108" cy="92" r="7"/>
+                            </g>
+                        </g>
+                        <g>
+                            <circle cx="192" cy="86" r="30" fill="rgba(233,184,114,0.10)" stroke="#e9b872" stroke-width="1.6"/>
+                            <circle cx="192" cy="86" r="40" fill="none" stroke="#e9b872" stroke-width="1" opacity="0.4"/>
+                            <path d="M164 154c0-17 13-28 28-28s28 11 28 28" fill="none" stroke="#e9b872" stroke-width="2"/>
+                        </g>
+                        <text x="70" y="182" fill="#98a1bd" font-size="12" font-family="Avenir Next, Segoe UI, sans-serif" text-anchor="middle" letter-spacing="1.5">CHASING LIKES</text>
+                        <text x="192" y="182" fill="#f7e0bb" font-size="12" font-family="Avenir Next, Segoe UI, sans-serif" text-anchor="middle" letter-spacing="1.5">BEING FIRST</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Teachings · part 2</p>
+            <h2 class="rv">More teachings that shocked the world</h2>
+            <div class="split wide-left" style="margin-top: 1.4cqw; align-items: center;">
+                <div class="rv rv-l" style="width: 100%;">
+                    <img class="photo" src="./img/good-samaritan.jpg" alt="The Good Samaritan lifting the wounded man onto his own beast" onerror="this.remove()">
+                </div>
+                <div class="stack narrow" style="gap: 1.1cqw;">
+                    <div class="card rv rv-l" style="border-color: var(--line);">
+                        <p class="verse" style="border: 0; padding: 0; font-size: 1.7cqw;">The Good Samaritan — a rival-group outsider becomes the hero.<span class="ref">Luke 10:25–37</span></p>
+                    </div>
+                    <div class="card rv rv-l" style="border-color: var(--line); display: flex; align-items: center; gap: 1.8cqw;">
+                        <svg style="flex: 0 0 auto; width: 7cqw; height: 7cqw;" viewBox="0 0 100 100" role="img" aria-label="Seventy seven times">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="9"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#e9b872" stroke-width="9" stroke-linecap="round" stroke-dasharray="230 251" transform="rotate(-90 50 50)"/>
+                            <text x="50" y="59" fill="#f7e0bb" font-size="30" font-family="Iowan Old Style, Baskerville, Georgia, serif" text-anchor="middle">77×</text>
+                        </svg>
+                        <p class="verse" style="border: 0; padding: 0; font-size: 1.7cqw;">Forgive <u>seventy-seven times</u> — no limits.<span class="ref">Matthew 18:21–22</span></p>
+                    </div>
+                    <p class="lede rv rv-l" style="font-size: 1.35cqw;">Peter asked if seven times was enough.<br>Jesus said: nah — seventy-seven.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Living proof</p>
+            <h2 class="rv">Lives changed by the Gospel</h2>
+            <div class="saints" style="margin-top: 1.6cqw;">
+                <div class="saint rv rv-s">
+                    <div class="slot">
+                        <div class="ph">
+                            <svg viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h4l1.5 2h7.5A2.5 2.5 0 0 1 21 9.5v8A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5Z"/><circle cx="12" cy="13" r="2.4"/></svg>
+                            <code>./img/carlo-acutis.jpg</code>
+                            <small>drop a portrait photo here</small>
+                        </div>
+                        <img src="./img/carlo-acutis.jpg" alt="Saint Carlo Acutis" onerror="this.remove()">
+                    </div>
+                    <div class="body">
+                        <h3>Saint Carlo Acutis</h3>
+                        <p class="yrs">1991 – 2006</p>
+                        <p>A gamer and computer whiz who was completely obsessed with the Eucharist. He died at 15 — and his faith has since inspired millions.</p>
+                        <blockquote>"The Eucharist is my highway to heaven."</blockquote>
+                    </div>
+                </div>
+                <div class="saint rv rv-s">
+                    <div class="slot">
+                        <div class="ph">
+                            <svg viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h4l1.5 2h7.5A2.5 2.5 0 0 1 21 9.5v8A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5Z"/><circle cx="12" cy="13" r="2.4"/></svg>
+                            <code>./img/pier-giorgio-frassati.jpg</code>
+                            <small>drop a portrait photo here</small>
+                        </div>
+                        <img src="./img/pier-giorgio-frassati.jpg" alt="Saint Pier Giorgio Frassati" onerror="this.remove()">
+                    </div>
+                    <div class="body">
+                        <h3>Saint Pier Giorgio Frassati</h3>
+                        <p class="yrs">1901 – 1925</p>
+                        <p>A fun-loving teen who was into sports, jokes, and a calling to live for the poor. He died at 24.</p>
+                        <blockquote>"To the heights!"</blockquote>
+                    </div>
+                </div>
+            </div>
+            <p class="banner rv rv-fade">They were normal teens. <span>The Gospel made them extraordinary.</span></p>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">The fingerprints</p>
+            <h2 class="rv">The New Testament completes the Old</h2>
+            <div class="stack" style="margin-top: 1.8cqw; gap: 1.3cqw;">
+                <div class="arrowrow rv rv-l">
+                    <div class="side old">
+                        <p class="lbl">Written hundreds of years before</p>
+                        <p class="txt">"And you, O Bethlehem, in the land of Judah… from you shall come out the ruler who will be the shepherd of my people."<span class="ref" style="color: var(--violet);">Micah 5:2</span></p>
+                    </div>
+                    <svg class="arw" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+                    <div class="side new">
+                        <p class="lbl">Fulfilled</p>
+                        <p class="txt">Born in Bethlehem</p>
+                    </div>
+                </div>
+                <div class="arrowrow rv rv-l">
+                    <div class="side old">
+                        <p class="lbl">Written hundreds of years before</p>
+                        <p class="txt">"Therefore the Lord himself will give you a sign: a virgin shall conceive and bear a son."<span class="ref" style="color: var(--violet);">Isaiah 7:14</span></p>
+                    </div>
+                    <svg class="arw" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+                    <div class="side new">
+                        <p class="lbl">Fulfilled</p>
+                        <p class="txt">Born of a virgin</p>
+                    </div>
+                </div>
+            </div>
+            <svg class="rv rv-fade" style="position: absolute; right: 3cqw; bottom: 3cqw; width: 16cqw; height: 16cqw; opacity: 0.16;" viewBox="0 0 100 100" aria-hidden="true">
+                <g fill="none" stroke="#e9b872" stroke-width="1.4">
+                    <path d="M50 52c-6-4-10-9-9-15 1-7 9-11 15-8 7-3 15 2 15 9 1 7-5 12-11 14"/>
+                    <path d="M50 52c-9-1-18 2-24 8-5 5-7 12-6 19"/>
+                    <path d="M50 52c9-1 18 2 24 8 5 5 7 12 6 19"/>
+                    <path d="M50 52c-2 10-1 20 3 29"/>
+                    <path d="M20 79c-3 6-4 13-3 19M80 79c3 6 4 13 3 19M53 81c0 7-1 13-3 19"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">YouCAt #16</p>
+            <h2 class="rv">The right way to read Scripture</h2>
+            <div class="split" style="margin-top: 1.4cqw; align-items: center;">
+                <div class="stack narrow" style="gap: 0.9cqw;">
+                    <div class="row rv rv-l" style="padding: 1.1cqw 1.5cqw;">
+                        <span class="num" style="flex:0 0 auto; width: 2.1cqw; height: 2.1cqw; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-size: 1.05cqw; font-weight: 700;">1</span>
+                        <span class="txt" style="font-size: 1.55cqw;">Read it prayerfully — with the Holy Spirit</span>
+                    </div>
+                    <div class="row rv rv-l" style="padding: 1.1cqw 1.5cqw;">
+                        <span class="num" style="flex:0 0 auto; width: 2.1cqw; height: 2.1cqw; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-size: 1.05cqw; font-weight: 700;">2</span>
+                        <span class="txt" style="font-size: 1.55cqw;">Read the whole message, not isolated verses</span>
+                    </div>
+                    <div class="row rv rv-l" style="padding: 1.1cqw 1.5cqw;">
+                        <span class="num" style="flex:0 0 auto; width: 2.1cqw; height: 2.1cqw; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-size: 1.05cqw; font-weight: 700;">3</span>
+                        <span class="txt" style="font-size: 1.55cqw;">Interpret it with Jesus Christ at the center</span>
+                    </div>
+                    <div class="row rv rv-l" style="padding: 1.1cqw 1.5cqw;">
+                        <span class="num" style="flex:0 0 auto; width: 2.1cqw; height: 2.1cqw; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-size: 1.05cqw; font-weight: 700;">4</span>
+                        <span class="txt" style="font-size: 1.55cqw;">Trust the Magisterium (Pope &amp; Bishops) for authentic interpretation</span>
+                    </div>
+                </div>
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.2cqw;">
+                    <svg class="rv rv-s" style="width: 22cqw; height: 22cqw;" viewBox="0 0 120 120" role="img" aria-label="A person reading a Bible with headphones, lit warmly">
+                        <circle cx="60" cy="56" r="46" fill="rgba(233,184,114,0.09)"/>
+                        <path d="M60 22C48 16 30 16 18 20v56c12-4 30-4 42 2Z" fill="#f0e6d2" opacity="0.92"/>
+                        <path d="M60 22c12-6 30-6 42-2v56c-12-4-30-4-42 2Z" fill="#ddcfb4" opacity="0.92"/>
+                        <path d="M60 22v56" stroke="#a08e69" stroke-width="1.6"/>
+                        <g stroke="#8a7a5a" stroke-width="1.2" opacity="0.4" fill="none">
+                            <path d="M26 34c8-2 18-1 26 3M26 44c8-2 18-1 26 3M26 54c8-2 18-1 26 3"/>
+                            <path d="M94 34c-8-2-18-1-26 3M94 44c-8-2-18-1-26 3M94 54c-8-2-18-1-26 3"/>
+                        </g>
+                        <path d="M18 34V26a10 10 0 0 1 20 0v34a7 7 0 0 1-14 0V34" fill="none" stroke="#e9b872" stroke-width="2.4" stroke-linecap="round"/>
+                        <path d="M102 34V26a10 10 0 0 0-20 0v34a7 7 0 0 0 14 0V34" fill="none" stroke="#e9b872" stroke-width="2.4" stroke-linecap="round"/>
+                    </svg>
+                    <div class="ccc rv rv-l" style="width: 100%; margin-top: -1.5cqw;">
+                        "Interpretation of the inspired Scripture must be attentive above all to what God wants to reveal through the sacred authors for our salvation."
+                        <span class="tag">CCC 137</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide top">
+            <p class="eyebrow rv rv-fade">Think about it…</p>
+            <h2 class="rv">Journal or small groups</h2>
+            <div class="notes-app rv rv-s" style="margin-top: 1.6cqw;">
+                <div class="notes-bar"><i></i><i></i><i></i><span>notes</span></div>
+                <div class="notes-body">
+                    <div class="q rv rv-l"><span class="n">1.</span><span class="t">Before today, what did you think the Bible <em>was</em>? Has that changed at all?</span></div>
+                    <div class="q rv rv-l"><span class="n">2.</span><span class="t">If it's God's love letter to you, what's <em>one small realistic step</em> you could take this week? One verse a day. No pressure.</span></div>
+                    <div class="q rv rv-l"><span class="n">3.</span><span class="t">Which of Jesus' teachings is hardest for you to <em>actually live out</em>? Why?</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="eyebrow">Closing prayer</p>
+            <div class="hymn cols2">
+                <div>
+                    <p>Come, Holy Spirit, live in us</p>
+                    <p>With God the Father and the Son,</p>
+                    <p>And grant us your abundant grace</p>
+                    <p>To sanctify and make us one.</p>
+                </div>
+                <div>
+                    <p>May mind and tongue made strong in love</p>
+                    <p>Your praise throughout the world proclaim,</p>
+                    <p>And may that love within our hearts</p>
+                    <p>Set fire to others with its flame.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="eyebrow">Closing prayer</p>
+            <div class="hymn single">
+                <p>Most blessèd Trinity of love,</p>
+                <p>For whom the heart of man was made,</p>
+                <p>To you be praise in timeless song,</p>
+                <p>And everlasting homage paid.</p>
+            </div>
+        </div>
+
+        <div class="edge edge-l" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></div>
+        <div class="edge edge-r" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></svg></div>
+        <div class="dots" id="dots" aria-hidden="true"></div>
+        <div class="counter" id="counter" aria-hidden="true"></div>
+        <div class="bar" id="bar" aria-hidden="true"></div>
+    </div>
+
+    <script>
+        const VIDEOS = {
+            video1: 'Jm3b4Q98Vx8',
+            video2: 'ak06MSETeo4'
+        };
+
+        const STORE = 'itb.videos';
+
+        try {
+            const saved = JSON.parse(localStorage.getItem(STORE) || '{}');
+            Object.keys(saved).forEach((k) => {
+                if (saved[k]) VIDEOS[k] = saved[k];
+            });
+        } catch (e) {}
+
+        function persistVideos() {
+            try {
+                localStorage.setItem(STORE, JSON.stringify(VIDEOS));
+            } catch (e) {}
+        }
+
+        function parseVideoId(raw) {
+            const v = String(raw || '').trim();
+            if (!v) return null;
+            const m = v.match(/(?:v=|\/embed\/|youtu\.be\/|\/shorts\/|\/live\/)([A-Za-z0-9_-]{11})/);
+            if (m) return m[1];
+            if (/^[A-Za-z0-9_-]{11}$/.test(v)) return v;
+            return null;
+        }
+
+        function mountVideo(frame) {
+            const key = frame.dataset.video;
+            const id = VIDEOS[key];
+            const poster = frame.querySelector('.vposter');
+            if (!id || !poster) return;
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+            iframe.title = 'Embedded video';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+            const close = document.createElement('button');
+            close.className = 'vclose';
+            close.type = 'button';
+            close.textContent = '✕';
+            close.title = 'Close video (stops playback)';
+            close.setAttribute('aria-label', 'Close video');
+            close.addEventListener('click', (e) => {
+                e.stopPropagation();
+                unmountVideo(frame);
+            });
+            frame._poster = poster;
+            frame._prompt = frame.querySelector('.vprompt');
+            frame.replaceChildren(iframe, close);
+        }
+
+        function unmountVideo(frame) {
+            frame.querySelectorAll('iframe, .vclose').forEach((n) => n.remove());
+            if (frame._poster && !frame.contains(frame._poster)) {
+                frame.prepend(frame._poster);
+            }
+            if (frame._prompt) frame._prompt.classList.remove('on');
+        }
+
+        function stopVideosOutside(keepIndex) {
+            slides.forEach((sl, i) => {
+                if (i === keepIndex) return;
+                sl.querySelectorAll('.vframe').forEach(unmountVideo);
+            });
+        }
+
+        document.querySelectorAll('.vframe').forEach((frame) => {
+            const poster = frame.querySelector('.vposter');
+            const prompt = frame.querySelector('.vprompt');
+            const input = frame.querySelector('.vprompt input');
+            const go = frame.querySelector('.vprompt button');
+
+            poster.addEventListener('click', () => {
+                if (VIDEOS[frame.dataset.video]) {
+                    mountVideo(frame);
+                } else {
+                    prompt.classList.add('on');
+                    input.focus();
+                }
+            });
+
+            go.addEventListener('click', () => {
+                const id = parseVideoId(input.value);
+                if (!id) {
+                    input.value = '';
+                    input.placeholder = "That didn't look like a link — try again";
+                    return;
+                }
+                VIDEOS[frame.dataset.video] = id;
+                persistVideos();
+                prompt.classList.remove('on');
+                mountVideo(frame);
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    go.click();
+                }
+            });
+
+            input.addEventListener('keydown', (e) => e.stopPropagation());
+        });
+
+        const stage = document.getElementById('stage');
+        const slides = Array.from(stage.querySelectorAll('.slide'));
+        const dotsEl = document.getElementById('dots');
+        const counterEl = document.getElementById('counter');
+        const barEl = document.getElementById('bar');
+        const total = slides.length;
+
+        let index = 0;
+        let shown = 0;
+
+        function revealsOf(i) {
+            return Array.from(slides[i].querySelectorAll('.rv'));
+        }
+
+        function paint() {
+            const list = revealsOf(index);
+            list.forEach((el, i) => el.classList.toggle('is-shown', i < shown));
+
+            dotsEl.innerHTML = '';
+            if (list.length) {
+                for (let i = 0; i < list.length; i++) {
+                    const d = document.createElement('i');
+                    if (i < shown) d.className = 'on';
+                    dotsEl.appendChild(d);
+                }
+            }
+
+            counterEl.textContent = (index + 1) + ' / ' + total;
+            barEl.style.width = (((index + 1) / total) * 100) + '%';
+        }
+
+        function render() {
+            slides.forEach((s, i) => s.classList.toggle('active', i === index));
+            stopVideosOutside(index);
+            paint();
+            const hash = '#slide-' + (index + 1) + (shown ? '&shown-' + shown : '');
+            history.replaceState(null, '', hash);
+        }
+
+        function goto(i, keepShown) {
+            index = Math.max(0, Math.min(total - 1, i));
+            shown = keepShown ? Math.min(shown, revealsOf(index).length) : 0;
+            render();
+        }
+
+        function forward() {
+            if (shown < revealsOf(index).length) {
+                shown++;
+                paint();
+                history.replaceState(null, '', '#slide-' + (index + 1) + '&shown-' + shown);
+                return;
+            }
+            if (index < total - 1) goto(index + 1, false);
+        }
+
+        function back() {
+            if (shown > 0) {
+                shown--;
+                paint();
+                history.replaceState(null, '', '#slide-' + (index + 1) + (shown ? '&shown-' + shown : ''));
+                return;
+            }
+            if (index > 0) goto(index - 1, false);
+        }
+
+        function nextSlide() {
+            if (index < total - 1) goto(index + 1, false);
+        }
+
+        function prevSlide() {
+            if (index > 0) goto(index - 1, false);
+        }
+
+        function fromHash() {
+            const h = window.location.hash;
+            const s = h.match(/slide-(\d+)/);
+            const r = h.match(/shown-(\d+)/);
+            const i = s ? Math.max(1, Math.min(total, parseInt(s[1], 10))) - 1 : 0;
+            const n = r ? parseInt(r[1], 10) : 0;
+            index = i;
+            shown = Math.max(0, Math.min(revealsOf(i).length, n));
+        }
+
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('button, input, iframe, a')) return;
+            const x = e.clientX / window.innerWidth;
+            if (x < 0.1) {
+                back();
+            } else if (x > 0.9) {
+                forward();
+            } else {
+                if (shown < revealsOf(index).length) {
+                    shown++;
+                    paint();
+                    history.replaceState(null, '', '#slide-' + (index + 1) + '&shown-' + shown);
+                }
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            document.body.classList.toggle('hover-l', x < 0.1);
+            document.body.classList.toggle('hover-r', x > 0.9);
+        });
+
+        document.addEventListener('mouseleave', () => {
+            document.body.classList.remove('hover-l', 'hover-r');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.matches('input, textarea')) return;
+            if (e.metaKey || e.ctrlKey || e.altKey) return;
+            switch (e.key) {
+                case 'ArrowRight':
+                case 'ArrowDown':
+                case 'PageDown':
+                case ' ':
+                    e.preventDefault();
+                    forward();
+                    break;
+                case 'ArrowLeft':
+                case 'ArrowUp':
+                case 'PageUp':
+                    e.preventDefault();
+                    back();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    goto(0, false);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    goto(total - 1, false);
+                    break;
+                case 'f':
+                case 'F':
+                    e.preventDefault();
+                    if (!document.fullscreenElement) {
+                        document.documentElement.requestFullscreen().catch(() => {});
+                    } else {
+                        document.exitFullscreen().catch(() => {});
+                    }
+                    break;
+            }
+        });
+
+        let wheelLock = 0;
+        document.addEventListener('wheel', (e) => {
+            const now = Date.now();
+            if (now - wheelLock < 650) return;
+            if (Math.abs(e.deltaY) < 12) return;
+            wheelLock = now;
+            if (e.deltaY > 0) forward();
+            else back();
+        }, { passive: true });
+
+        let touchX = null;
+        document.addEventListener('touchstart', (e) => {
+            touchX = e.changedTouches[0].clientX;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            if (touchX === null) return;
+            const dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 60) {
+                if (dx < 0) forward();
+                else back();
+            }
+            touchX = null;
+        }, { passive: true });
+
+        window.addEventListener('hashchange', () => {
+            fromHash();
+            render();
+        });
+
+        window.addEventListener('load', () => {
+            fromHash();
+            render();
+        });
+
+        fromHash();
+        render();
+    </script>
+</body>
+</html>
