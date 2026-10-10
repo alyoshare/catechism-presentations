@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evangelization — L8, St Joseph B.T.</title>
+    <style>
+        :root {
+            --paper: #fdfcfa;
+            --paper-2: #f4f1ea;
+            --ink: #262320;
+            --ink-soft: #4c473f;
+            --muted: #a49c91;
+            --accent: #a67c4e;
+            --line: rgba(38, 35, 32, 0.12);
+            --sans: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            --serif: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', Palatino, Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--paper);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .stage {
+            width: 100%;
+            height: 100%;
+            max-width: 177.78vh;
+            max-height: 56.25vw;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            overflow: hidden;
+            container-type: size;
+            background:
+                radial-gradient(120% 80% at 50% -10%, #fffdf9 0%, rgba(255, 253, 249, 0) 60%),
+                linear-gradient(170deg, var(--paper) 0%, var(--paper-2) 100%);
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 9cqw 13cqw;
+        }
+
+        .slide.active {
+            display: flex;
+            animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(0.9cqw); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .eyebrow {
+            font-size: 1.05cqw;
+            font-weight: 600;
+            letter-spacing: 0.38em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 2.6cqw;
+        }
+
+        h1 {
+            font-family: var(--serif);
+            font-size: 5.6cqw;
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            text-indent: 0.16em;
+        }
+
+        .lede {
+            font-size: 1.35cqw;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 3cqw;
+            text-indent: 0.3em;
+        }
+
+        .rule {
+            display: block;
+            width: 6cqw;
+            height: 1px;
+            background: var(--accent);
+            opacity: 0.55;
+            margin: 2.8cqw 0;
+        }
+
+        .q {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 4.6cqw;
+            font-weight: 400;
+            line-height: 1.22;
+            letter-spacing: -0.01em;
+            max-width: 76cqw;
+            text-wrap: balance;
+        }
+
+        .a {
+            font-size: 4.2cqw;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            color: var(--ink);
+            max-width: 72cqw;
+            text-wrap: balance;
+        }
+
+        .a .em {
+            color: var(--accent);
+        }
+
+        .sub {
+            font-size: 1.85cqw;
+            font-weight: 500;
+            line-height: 1.55;
+            color: var(--muted);
+            max-width: 56cqw;
+            margin-top: 2.2cqw;
+            text-wrap: balance;
+        }
+
+        .quote {
+            font-family: var(--serif);
+            font-size: 3cqw;
+            font-weight: 400;
+            line-height: 1.66;
+            max-width: 66cqw;
+            text-wrap: balance;
+        }
+
+        .cite {
+            font-size: 1.1cqw;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 3.2cqw;
+        }
+
+        .cite .rule {
+            margin: 0 auto 2.2cqw;
+        }
+
+        .step-label {
+            font-size: 1.6cqw;
+            font-weight: 600;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2.4cqw;
+        }
+
+        .step {
+            font-family: var(--serif);
+            font-size: 4.2cqw;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 70cqw;
+            text-wrap: balance;
+        }
+
+        .steps {
+            display: flex;
+            gap: 1.1cqw;
+            margin-top: 4cqw;
+        }
+
+        .steps i {
+            width: 0.5cqw;
+            height: 0.5cqw;
+            border-radius: 50%;
+            background: var(--ink);
+            opacity: 0.15;
+        }
+
+        .steps i.on {
+            opacity: 0.75;
+        }
+
+        .outline-labels {
+            display: flex;
+            gap: 3.4cqw;
+            margin-top: 3.6cqw;
+            font-size: 1cqw;
+            font-weight: 600;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .bar {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 0.28cqw;
+            background: var(--accent);
+            opacity: 0.5;
+            pointer-events: none;
+            transition: width 0.4s ease;
+        }
+
+        .zone {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            cursor: pointer;
+        }
+
+        .zone.l { left: 0; }
+        .zone.r { right: 0; }
+
+        .zone .chev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .zone.l .chev { left: 2.6cqw; }
+        .zone.r .chev { right: 2.6cqw; }
+
+        .zone.on .chev {
+            opacity: 0.6;
+        }
+
+        .zone.on.l .chev { transform: translate(-0.4cqw, -50%); }
+        .zone.on.r .chev { transform: translate(0.4cqw, -50%); }
+
+        .chev svg {
+            display: block;
+            width: 1.5cqw;
+            height: 1.5cqw;
+            stroke: var(--ink);
+            stroke-width: 1.4;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="stage" id="stage">
+        <section class="slide">
+            <h1>Evangelization</h1>
+            <div class="rule"></div>
+            <p class="lede">L8, St Joseph B.T.</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">If your friends ask what you actually do at church on Sundays, what would you say?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Pray · Homily · Eucharist</p>
+            <p class="sub">…and then we are <span class="em">sent out</span></p>
+        </section>
+
+        <section class="slide">
+            <p class="a"><span class="em">Missio</span> = Mission</p>
+            <p class="sub">We gather to receive — we leave to share</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">Isn’t faith a private thing between me and God?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">God is Love, Truth, Beauty</p>
+            <p class="sub">Truth believed <span class="em">compels us to share love</span></p>
+        </section>
+
+        <section class="slide">
+            <p class="quote">“Faith comes from what is heard… No one can proclaim the Gospel to himself. Grace must be offered and received through mission.”</p>
+            <p class="cite"><span class="rule"></span>CCC 875 / Romans 10:14–17</p>
+        </section>
+
+        <section class="slide">
+            <p class="quote">“Today too, people prefer to listen to witnesses: they thirst for authenticity and call for evangelizers to speak of a God whom they themselves know.”</p>
+            <p class="cite"><span class="rule"></span>Evangelii Gaudium 150</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">Do I need to be an expert in arguments to evangelize?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Not apologetics</p>
+            <p class="sub">Plant <span class="em">seeds of love</span> — not debates</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">My grandma</p>
+            <p class="sub">No arguments — only faithful prayers. They planted God in me</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">You scatter the seed</p>
+            <p class="sub"><span class="em">God gives the growth</span> — Mark 4:26–29</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">Are we trying to force or pressure people into believing?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Invitation, <span class="em">never coercion</span></p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Mother Teresa</p>
+            <p class="sub">Served the dying and poor in pure love — their freedom fully respected</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">What if I don’t have an epic conversion story of my own?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">No epic story needed</p>
+            <p class="sub">Share what inspires you in <span class="em">God’s work in others</span></p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Carlo Acutis</p>
+            <p class="sub">Retold Eucharistic miracles online — his passion spoke</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">Does my faith story have to be happy and perfect?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Real faith <span class="em">limps</span></p>
+            <p class="sub">Struggle belongs to the journey</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Jacob</p>
+            <p class="sub">Wrestled with God — walked away with a limp · Genesis 32</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">Will I get to see the results of sharing my faith?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">The ripple <span class="em">outlives you</span></p>
+            <p class="sub">Results reach far beyond your lifetime</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">St. Francis Xavier</p>
+            <p class="sub">A legacy that continues centuries later</p>
+        </section>
+
+        <section class="slide">
+            <p class="q">What if God asks you to share love with an enemy or someone who hurt you?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">Strongest when you <span class="em">least feel it</span></p>
+        </section>
+
+        <section class="slide">
+            <p class="a">St. Thérèse, age 14</p>
+            <p class="sub">Prayed for a criminal’s conversion — he repented before his execution</p>
+        </section>
+
+        <section class="slide">
+            <p class="a">St. John Paul II</p>
+            <p class="sub">Visited his assassin in prison — and forgave him</p>
+        </section>
+
+        <section class="slide">
+            <h1>Sharing Your Story<br>in 3 Steps</h1>
+            <div class="outline-labels">
+                <span>Before</span>
+                <span>Encounter</span>
+                <span>After</span>
+            </div>
+        </section>
+
+        <section class="slide">
+            <p class="step-label">Before</p>
+            <p class="step">“There was a time I felt…”</p>
+            <div class="steps"><i class="on"></i><i></i><i></i></div>
+        </section>
+
+        <section class="slide">
+            <p class="step-label">Encounter</p>
+            <p class="step">“Then I experienced God through…”</p>
+            <div class="steps"><i></i><i class="on"></i><i></i></div>
+        </section>
+
+        <section class="slide">
+            <p class="step-label">After</p>
+            <p class="step">“Now, my faith helps me to…”</p>
+            <div class="steps"><i></i><i></i><i class="on"></i></div>
+        </section>
+
+        <div class="zone l" id="zone-l"><span class="chev"><svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"></polyline></svg></span></div>
+        <div class="zone r" id="zone-r"><span class="chev"><svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"></polyline></svg></span></div>
+
+        <div class="bar" id="bar"></div>
+    </div>
+
+    <script>
+        (function () {
+            var stage = document.getElementById('stage');
+            var slides = Array.from(stage.querySelectorAll('.slide'));
+            var total = slides.length;
+            var bar = document.getElementById('bar');
+            var zoneL = document.getElementById('zone-l');
+            var zoneR = document.getElementById('zone-r');
+            var index = 0;
+
+            function render() {
+                slides.forEach(function (s, i) {
+                    s.classList.toggle('active', i === index);
+                });
+                bar.style.width = (((index + 1) / total) * 100) + '%';
+                history.replaceState(null, '', '#slide-' + (index + 1));
+            }
+
+            function goto(i) {
+                index = Math.max(0, Math.min(total - 1, i));
+                render();
+            }
+
+            function forward() {
+                if (index < total - 1) goto(index + 1);
+            }
+
+            function back() {
+                if (index > 0) goto(index - 1);
+            }
+
+            function fromHash() {
+                var m = window.location.hash.match(/slide-(\d+)/);
+                if (m) {
+                    var i = Math.max(1, Math.min(total, parseInt(m[1], 10))) - 1;
+                    index = i;
+                }
+            }
+
+            zoneR.addEventListener('click', forward);
+            zoneL.addEventListener('click', back);
+
+            zoneL.addEventListener('mouseenter', function () { zoneL.classList.add('on'); });
+            zoneL.addEventListener('mouseleave', function () { zoneL.classList.remove('on'); });
+            zoneR.addEventListener('mouseenter', function () { zoneR.classList.add('on'); });
+            zoneR.addEventListener('mouseleave', function () { zoneR.classList.remove('on'); });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.target.matches('input, textarea')) return;
+                if (e.metaKey || e.ctrlKey || e.altKey) return;
+                switch (e.key) {
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                    case 'PageDown':
+                    case ' ':
+                        e.preventDefault();
+                        forward();
+                        break;
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                    case 'PageUp':
+                        e.preventDefault();
+                        back();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        goto(0);
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        goto(total - 1);
+                        break;
+                    case 'f':
+                    case 'F':
+                        e.preventDefault();
+                        if (!document.fullscreenElement) {
+                            document.documentElement.requestFullscreen().catch(function () {});
+                        } else {
+                            document.exitFullscreen();
+                        }
+                        break;
+                }
+            });
+
+            var wheelLock = 0;
+            document.addEventListener('wheel', function (e) {
+                var now = Date.now();
+                if (now - wheelLock < 650) return;
+                if (Math.abs(e.deltaY) < 12 && Math.abs(e.deltaX) < 12) return;
+                var d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+                wheelLock = now;
+                if (d > 0) forward();
+                else back();
+            }, { passive: true });
+
+            var touchX = null;
+            document.addEventListener('touchstart', function (e) {
+                touchX = e.changedTouches[0].clientX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', function (e) {
+                if (touchX === null) return;
+                var dx = e.changedTouches[0].clientX - touchX;
+                if (Math.abs(dx) > 50) {
+                    if (dx < 0) forward();
+                    else back();
+                }
+                touchX = null;
+            }, { passive: true });
+
+            window.addEventListener('hashchange', function () {
+                fromHash();
+                render();
+            });
+
+            fromHash();
+            render();
+        })();
+    </script>
+</body>
+</html>
