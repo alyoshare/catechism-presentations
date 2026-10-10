@@ -146,6 +146,64 @@
             text-wrap: balance;
         }
 
+        .portrait {
+            display: block;
+            width: 12cqw;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border: 1px solid var(--line);
+            border-radius: 0.8cqw;
+            margin-top: 3.4cqw;
+            filter: saturate(0.8) contrast(0.98);
+            opacity: 0.94;
+        }
+
+        .portrait.wide {
+            width: 16cqw;
+            aspect-ratio: 4 / 3;
+        }
+
+        .row2 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 1.4cqw;
+            margin-top: 3.4cqw;
+        }
+
+        .row2 .portrait {
+            margin-top: 0;
+            width: auto;
+            flex: 0 0 auto;
+            height: 14cqw;
+        }
+
+        .photo {
+            display: block;
+            height: 40cqw;
+            width: auto;
+            border: 1px solid var(--line);
+            border-radius: 0.8cqw;
+            opacity: 0.96;
+        }
+
+        .photo.sq {
+            height: 31cqw;
+        }
+
+        .photo.shot {
+            height: 33cqw;
+        }
+
+        .caption {
+            font-size: 1.15cqw;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 2.8cqw;
+        }
+
         .quote {
             font-family: var(--serif);
             font-size: 3cqw;
@@ -202,6 +260,17 @@
 
         .steps i.on {
             opacity: 0.75;
+        }
+
+        .credits {
+            font-size: 0.85cqw;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            line-height: 1.7;
+            color: var(--muted);
+            opacity: 0.75;
+            max-width: 60cqw;
+            margin-top: 3.4cqw;
         }
 
         .outline-labels {
@@ -318,7 +387,7 @@
         </section>
 
         <section class="slide">
-            <p class="a">My grandma</p>
+            <p class="a">My (or ... Our?) grandma</p>
             <p class="sub">No arguments — only faithful prayers. They planted God in me</p>
         </section>
 
@@ -338,6 +407,7 @@
         <section class="slide">
             <p class="a">Mother Teresa</p>
             <p class="sub">Served the dying and poor in pure love — their freedom fully respected</p>
+            <img class="portrait" src="img/mother-teresa.jpg" alt="Mother Teresa">
         </section>
 
         <section class="slide">
@@ -345,17 +415,23 @@
         </section>
 
         <section class="slide">
-            <p class="a">No epic story needed</p>
+            <p class="a">No personal epic needed</p>
             <p class="sub">Share what inspires you in <span class="em">God’s work in others</span></p>
+        </section>
+
+        <section class="slide">
+            <img class="photo shot" src="img/carlo-site.png" alt="Carlo Acutis's Eucharistic Miracles of the World exhibition website">
+            <p class="caption">miracolieucaristici.org</p>
         </section>
 
         <section class="slide">
             <p class="a">Carlo Acutis</p>
             <p class="sub">Retold Eucharistic miracles online — his passion spoke</p>
+            <img class="portrait" src="img/carlo-acutis.jpg" alt="Blessed Carlo Acutis">
         </section>
 
         <section class="slide">
-            <p class="q">Does my faith story have to be happy and perfect?</p>
+            <p class="q">Does my faith story have to be happy and blissful?</p>
         </section>
 
         <section class="slide">
@@ -366,6 +442,7 @@
         <section class="slide">
             <p class="a">Jacob</p>
             <p class="sub">Wrestled with God — walked away with a limp · Genesis 32</p>
+            <img class="portrait wide" src="img/jacob.jpg" alt="Jacob wrestling with the angel, by Rembrandt">
         </section>
 
         <section class="slide">
@@ -380,6 +457,16 @@
         <section class="slide">
             <p class="a">St. Francis Xavier</p>
             <p class="sub">A legacy that continues centuries later</p>
+            <img class="portrait" src="img/francis-xavier.jpg" alt="St Francis Xavier">
+        </section>
+
+        <section class="slide">
+            <img class="photo" src="img/sfx.png" alt="Standing before the statue of St Francis Xavier">
+            <p class="caption">Where St. Francis Xavier is honored</p>
+        </section>
+
+        <section class="slide">
+            <img class="photo sq" src="img/sfx-hand.png" alt="Statue of St Francis Xavier">
         </section>
 
         <section class="slide">
@@ -393,11 +480,16 @@
         <section class="slide">
             <p class="a">St. Thérèse, age 14</p>
             <p class="sub">Prayed for a criminal’s conversion — he repented before his execution</p>
+            <img class="portrait" src="img/therese.jpg" alt="St Therese of Lisieux">
         </section>
 
         <section class="slide">
             <p class="a">St. John Paul II</p>
             <p class="sub">Visited his assassin in prison — and forgave him</p>
+            <div class="row2">
+                <img class="portrait" src="img/john-paul-ii.jpg" alt="St John Paul II">
+                <img class="portrait" src="img/jp2-assassin.jpeg" alt="St John Paul II with his assassin in prison">
+            </div>
         </section>
 
         <section class="slide">
@@ -425,6 +517,7 @@
             <p class="step-label">After</p>
             <p class="step">“Now, my faith helps me to…”</p>
             <div class="steps"><i></i><i></i><i class="on"></i></div>
+            <p class="credits">Images via Wikimedia Commons — Mother Teresa: Kingkongphoto &amp; www.celebrity-photos.com (CC BY-SA 2.0) · Carlo Acutis relief: AndyScott (CC BY-SA 4.0) · St Thérèse: Céline Martin (PD) · St Francis Xavier (PD) · Jacob: Rembrandt (PD) · John Paul II: D. Gregorini (CC BY-SA 3.0)</p>
         </section>
 
         <div class="zone l" id="zone-l"><span class="chev"><svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"></polyline></svg></span></div>
