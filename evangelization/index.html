@@ -92,6 +92,17 @@
             text-indent: 0.16em;
         }
 
+        .section-title {
+            font-family: var(--serif);
+            font-size: 3.4cqw;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-indent: 0.06em;
+            margin-bottom: 3.8cqw;
+        }
+
         .lede {
             font-size: 1.35cqw;
             font-weight: 600;
@@ -132,8 +143,35 @@
             text-wrap: balance;
         }
 
-        .a .em {
+        .em {
             color: var(--accent);
+            font-weight: 700;
+        }
+
+        .a.tracked {
+            letter-spacing: 0.06em;
+            text-indent: 0.06em;
+        }
+
+        .points {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            margin: 0 auto;
+            gap: 1.8cqw;
+            font-family: var(--serif);
+            font-size: 4cqw;
+            font-weight: 400;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .points .sep {
+            align-self: center;
+            font-family: var(--sans);
+            font-size: 0.55em;
+            color: var(--muted);
         }
 
         .sub {
@@ -213,6 +251,20 @@
             text-wrap: balance;
         }
 
+        .scripture {
+            font-size: 2cqw;
+            line-height: 1.6;
+            max-width: 70cqw;
+            text-align: left;
+        }
+
+        .scripture .v {
+            font-size: 0.25em;
+            font-weight: 600;
+            vertical-align: 0.5em;
+            color: var(--muted);
+        }
+
         .cite {
             font-size: 1.1cqw;
             font-weight: 600;
@@ -226,62 +278,64 @@
             margin: 0 auto 2.2cqw;
         }
 
-        .step-label {
-            font-size: 1.6cqw;
+        .steps-table {
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .steps-table th,
+        .steps-table td {
+            padding: 1.1cqw 0;
+            vertical-align: baseline;
+        }
+
+        .steps-table th {
+            padding-right: 3.4cqw;
+            font-family: var(--sans);
+            font-size: 1.15cqw;
             font-weight: 600;
-            letter-spacing: 0.42em;
+            letter-spacing: 0.38em;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 2.4cqw;
+            text-align: left;
+            white-space: nowrap;
         }
 
-        .step {
+        .steps-table td {
             font-family: var(--serif);
-            font-size: 4.2cqw;
-            font-weight: 400;
+            font-size: 2.8cqw;
             line-height: 1.3;
-            max-width: 70cqw;
-            text-wrap: balance;
         }
 
-        .steps {
-            display: flex;
-            gap: 1.1cqw;
-            margin-top: 4cqw;
-        }
-
-        .steps i {
-            width: 0.5cqw;
-            height: 0.5cqw;
-            border-radius: 50%;
-            background: var(--ink);
-            opacity: 0.15;
-        }
-
-        .steps i.on {
-            opacity: 0.75;
-        }
-
-        .credits {
-            font-size: 0.85cqw;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            line-height: 1.7;
-            color: var(--muted);
-            opacity: 0.75;
-            max-width: 60cqw;
-            margin-top: 3.4cqw;
-        }
-
-        .outline-labels {
-            display: flex;
-            gap: 3.4cqw;
-            margin-top: 3.6cqw;
-            font-size: 1cqw;
+        .refs {
+            font-size: 1.6cqw;
             font-weight: 600;
-            letter-spacing: 0.34em;
-            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--muted);
+            margin-top: 3.2cqw;
+        }
+
+        .prayer {
+            font-family: var(--serif);
+            font-size: 2.3cqw;
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 74cqw;
+            text-align: left;
+            color: var(--ink-soft);
+        }
+
+        .prayer.dense {
+            font-size: 2.1cqw;
+            line-height: 1.65;
+        }
+
+        .prayer.dense p + p {
+            margin-top: 1.8cqw;
+        }
+
+        .prayer p + p {
+            margin-top: 2.2cqw;
         }
 
         .bar {
@@ -345,17 +399,33 @@
         </section>
 
         <section class="slide">
+            <div class="prayer">
+                <p>Heavenly Father, pour forth your Holy Spirit to inspire me with the words from Holy Scripture. Stir in my soul the desire to renew my faith and deepen my relationship with your Son, our Lord Jesus Christ so that I might truly believe in and live the Good News.</p>
+                <p>Open my heart to hear the Gospel and grant me the confidence to proclaim the Good News to others. Pour out your Spirit, so that I might be strengthened to go forth and witness to the Gospel in my everyday life through my words and actions.</p>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="prayer">
+                <p>God, our Father, I pray that through the Holy Spirit I might hear the call of the evangelization to deepen my faith, grow in confidence to proclaim the Gospel and boldly witness to the saving grace of your Son, Jesus Christ, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever.</p>
+                <p>Amen.</p>
+            </div>
+        </section>
+
+        <section class="slide">
             <p class="q">If your friends ask what you actually do at church on Sundays, what would you say?</p>
         </section>
 
         <section class="slide">
-            <p class="a">Pray · Homily · Eucharist</p>
-            <p class="sub">…and then we are <span class="em">sent out</span></p>
+            <p class="points"><span>Pray</span><span class="sep">·</span><span>Homily</span><span class="sep">·</span><span>Eucharist</span></p>
         </section>
 
         <section class="slide">
-            <p class="a"><span class="em">Missio</span> = Mission</p>
-            <p class="sub">We gather to receive — we leave to share</p>
+            <p class="q">… then?</p>
+        </section>
+
+        <section class="slide">
+            <p class="a tracked">ITE, <span class="em">MISSA</span> EST</p>
         </section>
 
         <section class="slide">
@@ -364,17 +434,12 @@
 
         <section class="slide">
             <p class="a">God is Love, Truth, Beauty</p>
-            <p class="sub">Truth believed <span class="em">compels us to share love</span></p>
+            <p class="sub">Truth believed <span class="em">compels us to share</span></p>
         </section>
 
         <section class="slide">
-            <p class="quote">“Faith comes from what is heard… No one can proclaim the Gospel to himself. Grace must be offered and received through mission.”</p>
-            <p class="cite"><span class="rule"></span>CCC 875 / Romans 10:14–17</p>
-        </section>
-
-        <section class="slide">
-            <p class="quote">“Today too, people prefer to listen to witnesses: they thirst for authenticity and call for evangelizers to speak of a God whom they themselves know.”</p>
-            <p class="cite"><span class="rule"></span>Evangelii Gaudium 150</p>
+            <p class="quote scripture"><span class="v">14</span> But how are men to call upon him in whom they have not believed? And how are they to believe in him of whom they have never heard? And how are they to hear without a preacher? <span class="v">15</span> And how can men preach unless they are sent? As it is written, “How beautiful are the feet of those who preach good news!” <span class="v">16</span> But they have not all heeded the gospel; for Isaiah says, “Lord, who has believed what he has heard from us?” <span class="em"><span class="v">17</span> So faith comes from what is heard, and what is heard comes by the preaching of Christ.</span></p>
+            <p class="cite"><span class="rule"></span>Romans 10:14–17</p>
         </section>
 
         <section class="slide">
@@ -394,6 +459,11 @@
         <section class="slide">
             <p class="a">You scatter the seed</p>
             <p class="sub"><span class="em">God gives the growth</span> — Mark 4:26–29</p>
+        </section>
+
+        <section class="slide">
+            <p class="quote scripture"><span class="v">26</span> And he said, “The kingdom of God is as if a man should scatter seed upon the ground, <span class="v">27</span> and should sleep and rise night and day, and <span class="em">the seed should sprout and grow, he knows not how.</span> <span class="v">28</span> The earth produces of itself, first the blade, then the ear, then the full grain in the ear. <span class="v">29</span> But when the grain is ripe, at once he puts in the sickle, because the harvest has come.”</p>
+            <p class="cite"><span class="rule"></span>Mark 4:26–29</p>
         </section>
 
         <section class="slide">
@@ -446,6 +516,16 @@
         </section>
 
         <section class="slide">
+            <p class="quote scripture"><span class="v">24</span> Jacob was left alone; and a man wrestled with him until the breaking of the day. <span class="v">25</span> When the man saw that he did not prevail against Jacob, he touched the hollow of his thigh; and Jacob’s thigh was put out of joint. […] <span class="v">26</span> Then he said, “Let me go, for the day is breaking.” But Jacob said, “<span class="em">I will not let you go, unless you bless me.</span>” […] <span class="v">28</span> “Your name shall no more be called Jacob, but Israel, for you have striven with God and with men, and have prevailed.” […] <span class="v">31</span> The sun rose upon him as he passed Penu′el, limping because of his thigh.</p>
+            <p class="cite"><span class="rule"></span>Genesis 32:24–31</p>
+        </section>
+
+        <section class="slide">
+            <p class="quote">“Today too, people prefer to listen to witnesses: they <span class="em">thirst for authenticity</span> and call for evangelizers to speak of a God whom they themselves know.”</p>
+            <p class="cite"><span class="rule"></span>Evangelii Gaudium 150</p>
+        </section>
+
+        <section class="slide">
             <p class="q">Will I get to see the results of sharing my faith?</p>
         </section>
 
@@ -470,17 +550,11 @@
         </section>
 
         <section class="slide">
-            <p class="q">What if God asks you to share love with an enemy or someone who hurt you?</p>
+            <p class="q">Would you share love with an enemy…?</p>
         </section>
 
         <section class="slide">
             <p class="a">Strongest when you <span class="em">least feel it</span></p>
-        </section>
-
-        <section class="slide">
-            <p class="a">St. Thérèse, age 14</p>
-            <p class="sub">Prayed for a criminal’s conversion — he repented before his execution</p>
-            <img class="portrait" src="img/therese.jpg" alt="St Therese of Lisieux">
         </section>
 
         <section class="slide">
@@ -493,31 +567,52 @@
         </section>
 
         <section class="slide">
-            <h1>Sharing Your Story<br>in 3 Steps</h1>
-            <div class="outline-labels">
-                <span>Before</span>
-                <span>Encounter</span>
-                <span>After</span>
+            <p class="a">St. Thérèse, age 14</p>
+            <p class="sub">Prayed for a criminal’s conversion — he repented before his execution</p>
+            <img class="portrait" src="img/therese.jpg" alt="St Therese of Lisieux">
+        </section>
+
+        <section class="slide">
+            <h2 class="section-title">Sharing Your Story in 3 Steps</h2>
+            <table class="steps-table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Before</th>
+                        <td>“There was a time I felt…”</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Encounter</th>
+                        <td>“Then I experienced God through…”</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">After</th>
+                        <td>“Now, my faith helps me to…”</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="refs">Scripture references — Genesis 32:24–31 · Mark 4:26–29 · Romans 10:14–17</p>
+            <!-- Image credits (not shown on slide; internal class use):
+                 Mother Teresa: Kingkongphoto & www.celebrity-photos.com (CC BY-SA 2.0)
+                 Carlo Acutis relief: AndyScott (CC BY-SA 4.0)
+                 St Thérèse: Céline Martin (PD) · St Francis Xavier (PD)
+                 Jacob: Rembrandt (PD) · John Paul II: D. Gregorini (CC BY-SA 3.0) -->
+        </section>
+
+        <section class="slide">
+            <div class="prayer dense">
+                <p>Most Holy Virgin Mary, Mother of Christ, we praise and thank God for His mighty works in you.</p>
+                <p>O Blessed Mother, Star of the New Evangelisation; we consecrate the New Evangelisation for Singapore to your Most Immaculate Heart and implore your intercession for a mighty renewal of the Catholic Church in Singapore.</p>
+                <p>We entrust to you all priests, Religious and laity. Guide our leaders to imitate your humility and obedience to God and to be docile to the promptings of the Holy Spirit.</p>
             </div>
         </section>
 
         <section class="slide">
-            <p class="step-label">Before</p>
-            <p class="step">“There was a time I felt…”</p>
-            <div class="steps"><i class="on"></i><i></i><i></i></div>
-        </section>
-
-        <section class="slide">
-            <p class="step-label">Encounter</p>
-            <p class="step">“Then I experienced God through…”</p>
-            <div class="steps"><i></i><i class="on"></i><i></i></div>
-        </section>
-
-        <section class="slide">
-            <p class="step-label">After</p>
-            <p class="step">“Now, my faith helps me to…”</p>
-            <div class="steps"><i></i><i></i><i class="on"></i></div>
-            <p class="credits">Images via Wikimedia Commons — Mother Teresa: Kingkongphoto &amp; www.celebrity-photos.com (CC BY-SA 2.0) · Carlo Acutis relief: AndyScott (CC BY-SA 4.0) · St Thérèse: Céline Martin (PD) · St Francis Xavier (PD) · Jacob: Rembrandt (PD) · John Paul II: D. Gregorini (CC BY-SA 3.0)</p>
+            <div class="prayer dense">
+                <p>May all hearts be converted and re-ignited with love for Christ and inflamed with evangelical zeal, so as to bear witness to God’s loving salvation. Mary, Mother of the Church, unite us with the Sacred Heart of Jesus, to be a people of communion in mission.</p>
+                <p>May your constant love and guidance be the light of refuge that leads us to your son, Jesus.</p>
+                <p>Pray for us, O Holy Mother of God, that we may be made worthy of the promises of Christ.</p>
+                <p>Amen.</p>
+            </div>
         </section>
 
         <div class="zone l" id="zone-l"><span class="chev"><svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"></polyline></svg></span></div>
