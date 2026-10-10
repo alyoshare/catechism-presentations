@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Notes — Evangelization, L8</title>
+    <style>
+        :root {
+            --paper: #fdfcfa;
+            --paper-2: #f4f1ea;
+            --ink: #262320;
+            --ink-soft: #4c473f;
+            --muted: #a49c91;
+            --accent: #a67c4e;
+            --line: rgba(38, 35, 32, 0.12);
+            --sans: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            --serif: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', Palatino, Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--paper-2);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .wrap {
+            max-width: 62rem;
+            margin: 0 auto;
+            padding: 3.5rem 1.75rem 6rem;
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .eyebrow {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.9rem;
+        }
+
+        h1 {
+            font-family: var(--serif);
+            font-size: 2.4rem;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: 0.01em;
+        }
+
+        .meta {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+        }
+
+        .decklink {
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(166, 124, 78, 0.35);
+            padding-bottom: 0.15rem;
+        }
+
+        .decklink:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .flow {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 0.5rem;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .flow h2 {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .flow ol {
+            list-style: none;
+            display: grid;
+            gap: 0.55rem;
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+        }
+
+        .flow li {
+            display: grid;
+            grid-template-columns: 5.5rem 1fr;
+            gap: 1rem;
+        }
+
+        .flow li b {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .flow .tip {
+            margin-top: 1.25rem;
+            padding-top: 1.1rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .key {
+            background: var(--paper-2);
+            border-left: 2px solid var(--accent);
+            padding: 0.85rem 1.05rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.96rem;
+            color: var(--ink);
+        }
+
+        .note {
+            display: grid;
+            grid-template-columns: 15rem 1fr;
+            gap: 2rem;
+            padding: 1.85rem 0;
+            border-top: 1px solid var(--line);
+            align-items: start;
+        }
+
+        .n {
+            font-family: var(--serif);
+            font-size: 2rem;
+            line-height: 1;
+            color: var(--accent);
+        }
+
+        .slidetext {
+            margin-top: 0.6rem;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: var(--ink-soft);
+        }
+
+        .slidetext a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .slidetext a:hover {
+            color: var(--accent);
+        }
+
+        .slidetext .cue {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .notes p {
+            margin-bottom: 0.85rem;
+            font-size: 1rem;
+            color: var(--ink-soft);
+        }
+
+        .notes p:last-child {
+            margin-bottom: 0;
+        }
+
+        .notes strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .say {
+            font-family: var(--serif);
+            font-size: 1.08rem;
+            font-style: italic;
+            color: var(--ink);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            margin-bottom: 0.85rem;
+        }
+
+        .do {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0.85rem;
+        }
+
+        .do::before {
+            content: 'Do:';
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-right: 0.4rem;
+        }
+
+        .forms-box {
+            margin-top: 1.2rem;
+            padding: 1.1rem 1.25rem;
+            background: var(--paper-2);
+            border-left: 2px solid var(--accent);
+        }
+
+        .forms-h {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.95rem;
+        }
+
+        .forms {
+            list-style: none;
+            display: grid;
+            gap: 0.8rem;
+            margin-bottom: 0.95rem;
+        }
+
+        .forms li {
+            display: grid;
+            gap: 0.2rem;
+        }
+
+        .forms li b {
+            font-family: var(--serif);
+            font-size: 1.08rem;
+            font-weight: 400;
+            color: var(--ink);
+        }
+
+        .forms li span {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--ink-soft);
+        }
+
+        .forms-tip {
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--line);
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--muted);
+        }
+
+        @media (max-width: 720px) {
+            .note {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .flow li {
+                grid-template-columns: 4.5rem 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .decklink {
+                display: none;
+            }
+
+            .note {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <p class="eyebrow">Speaker Notes</p>
+            <h1>Evangelization</h1>
+            <p class="meta">L8, St Joseph B.T. · 39 slides · approx. 30 minutes plus discussion</p>
+            <a class="decklink" href="index.html" target="_blank" rel="noopener">Open the deck ↗</a>
+        </header>
+
+        <section class="flow">
+            <h2>Shape of the session</h2>
+            <ol>
+                <li><b>Send</b><span>Sunday is a sending, not a finish line — slides 4–7</span></li>
+                <li><b>Private?</b><span>Faith believed compels us to share — slides 8–10</span></li>
+                <li><b>How</b><span>Seeds not debates — slides 11–15</span></li>
+                <li><b>How not</b><span>Invitation, never coercion — slides 16–18</span></li>
+                <li><b>Who</b><span>Borrow other people's stories — slides 19–22</span></li>
+                <li><b>Real</b><span>Faith limps — slides 23–27</span></li>
+                <li><b>Fruit</b><span>The ripple outlives you — slides 28–32</span></li>
+                <li><b>Cost</b><span>The hard one — slides 33–36</span></li>
+                <li><b>Do</b><span>Your story in 3 steps — slide 37</span></li>
+            </ol>
+            <p class="tip">Slide text below links back to the matching slide in the deck. The two questions you should actually put to the room are slide 4 and slide 11 — everything else you can deliver as a statement. Slow down on 6, 26 and 35; those three are the landing points.</p>
+        </section>
+
+        <article class="note">
+            <div>
+                <div class="n">1</div>
+                <p class="slidetext">Evangelization — L8, St Joseph B.T.<a href="index.html#slide-1" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Settle the room, then frame it in one sentence. <strong>The point of today is not how to win an argument for the faith — it is what we do with what we have already been given.</strong></p>
+                <p>Don't linger here. This slide is a door, not a destination.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">2–3</div>
+                <p class="slidetext">Opening prayer — "Heavenly Father, pour forth your Holy Spirit…"<a href="index.html#slide-2" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Said, not explained. Pause before you start and a beat after the amen. No commentary on the theology — it all comes back later in the talk.</p>
+                <div class="do">If it is your custom for the class to stand, invite them to before you begin rather than after.</div>
+                <p>Note the last petition — <em>hear the call of the evangelisation</em>. That is the assignment for the rest of the session.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">4</div>
+                <p class="slidetext">If your friends ask what you actually do at church on Sundays, what would you say?<a href="index.html#slide-4" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>First real question of the talk — actually put it to the room and wait.</strong> Take three or four answers out loud.</p>
+                <p>Expect "pray, listen to the homily, Holy Mass." Let their words, not yours, become the next slide.</p>
+                <div class="do">Do not correct or improve anyone's answer. Slide 5 hands their own words straight back to them.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">5</div>
+                <p class="slidetext">Pray · Homily · Eucharist<a href="index.html#slide-5" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Just their answers, returned. Let it sit for two seconds before moving on.</p>
+                <p>Optional aside: that is the <em>shape</em> of a Sunday, not the whole of it. Which is exactly why the next question matters.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">6</div>
+                <p class="slidetext">… then?<a href="index.html#slide-6" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>The hinge of the whole talk.</strong> Pause and let the ellipsis do its work.</p>
+                <p class="say">"…and then we're sent out. The Mass isn't the finish line — it's the send-off."</p>
+                <p>Then leave the question hanging. The answer is the next slide.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">7</div>
+                <p class="slidetext">ITE, MISSA EST<a href="index.html#slide-7" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Every Mass ends with these words. <em>Ite</em> — go. <em>Missa est</em> — it is the sending.</p>
+                <p>Worth saying: <strong>the word "mission" and the word "Mass" share a root.</strong> Mass and mission are the same thing, and evangelisation is not an extra activity bolted onto the liturgy. It is what the Mass is for.</p>
+<p>Also worth saying: the sending is God's before it is ours. We do not authorise the mission; we are sent in one.</p>
+                    <div class="forms-box">
+                        <h3 class="forms-h">The Mass ending — three forms</h3>
+                        <ol class="forms">
+                            <li>
+                                <b>Go forth, the Mass is ended</b>
+                                <span>The literal rendering of the Latin on the slide. <em>Missa</em> is the late-Latin form of <em>missio</em>, so it means the sending is made.</span>
+                            </li>
+                            <li>
+                                <b>Go and announce the Gospel of the Lord</b>
+                                <span><em>Ite ad Evangelium Domini nuntiandum.</em> One of the two essential calls inside the sending: the outward one, carrying the Gospel to others.</span>
+                            </li>
+                            <li>
+                                <b>Go in peace, glorifying the Lord by your life</b>
+                                <span><em>Ite in pace, glorificando vita vestra Dominum.</em> The other: the outward call is made good by the way you actually live.</span>
+                            </li>
+                        </ol>
+                        <div class="forms-tip">The first translates the Latin; the other two unpack what that sending actually asks for. Both alternatives were approved for use in the Roman Rite, so if one of them comes at Mass, nothing unusual has happened — and both are worth listening for.</div>
+                    </div>
+                </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">8</div>
+                <p class="slidetext">Isn't faith a private thing between me and God?<a href="index.html#slide-8" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Take a show of hands if you want. Most of the room will agree, and that's useful — it lets you say the Church agrees <em>partly</em>.</p>
+                <p>Faith is genuinely personal and intimate. Nobody is bluffing that. But the next slide shows where it stops being private.</p>
+                <div class="do">Don't argue anyone out of their answer. Concede it, then turn.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">9</div>
+                <p class="slidetext">God is Love, Truth, Beauty — Truth believed compels us to share<a href="index.html#slide-9" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Three ways we recognise God — and the first one is the engine for everything after this.</p>
+                <p><strong>Truth believed compels us to share.</strong> This is the deck's own line, not a quotation — so don't attribute it to anyone if challenged. The solid support behind it is 1 Corinthians 9:16: <em>Woe to me if I should preach not the gospel.</em> Paul calls it a necessity laid on him, not a talent he happens to have. If truth is genuinely held, it cannot be held quietly.</p>
+                <p class="say">"What have you believed that you have never told anybody?"</p>
+                <p>Don't collect answers. Let the question work on them.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">10</div>
+                <p class="slidetext">Romans 10:14–17<a href="index.html#slide-10" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Walk the chain in verse 14 quickly — call, believe, hear, preacher, sent. Every single link requires <em>somebody else</em> to be involved.</p>
+                <p>That is the whole argument of the verse: <strong>you cannot complete it alone.</strong> Even the call presupposes something heard first.</p>
+                <p>Land on verse 17 — faith comes from what is heard, and hearing implies a voice. Someone spoke.</p>
+                <p>This is the answer to slide 8. Faith is not private, because it was never received privately.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">11</div>
+                <p class="slidetext">Do I need to be an expert in arguments to evangelize?<a href="index.html#slide-11" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>Second real question — put it to the room.</strong> The relief in the faces is the point. Almost nobody here feels equipped, and the next slide tells them they don't need to be.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">12</div>
+                <p class="slidetext">Not apologetics — Plant seeds of love, not debates<a href="index.html#slide-12" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Draw the distinction cleanly: <strong>apologetics defends the faith; evangelisation shares a Person.</strong> They are different jobs.</p>
+                <div class="key"><strong>Say the nuance out loud, or the slide will misfire.</strong> Apologetics is not strictly necessary — nobody is disqualified from sharing their faith because they cannot explain the Trinity or answer a question about suffering. It is helpful. When someone pushes back, having a reason ready keeps the conversation open instead of turning it into a fight.</div>
+                <p>So: not a prerequisite, genuinely useful. Both halves are true, and the second half is what stops "not apologetics" being heard as "apologetics is pointless".</p>
+                <p>The goal is not a debate won but a life seen. Keep the words "seeds" — you will call them back on slide 15.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">13</div>
+                <p class="slidetext">My (or … Our?) grandma — No arguments, only faithful prayers<a href="index.html#slide-13" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>Tell a real story, briefly.</strong> Name her. Sixty seconds, concrete details — something she actually said or did. Specific beats impressive every time.</p>
+                <p>The point: nobody argued her into the faith. She prayed, and her children grew up watching that.</p>
+                <div class="do">Then ask the room to remember theirs. One line, hands up, no commentary.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">14</div>
+                <p class="slidetext">You scatter the seed — God gives the growth<a href="index.html#slide-14" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>The division of labour: we sow, God grows. Say it plainly — <strong>there is no pressure on you about the results.</strong></p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">15</div>
+                <p class="slidetext">Mark 4:26–29<a href="index.html#slide-15" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Slow down on verse 27 — <em>he knows not how</em>. That is deliberate. God does not explain the mechanism to the man scattering seed.</p>
+                <p>Point out the farmer's actual job in verse 26: scatter, sleep, rise night and day. <strong>It is almost entirely waiting.</strong></p>
+                <p>This is slide 12 again — seeds, not speeches. The parable is about patience, not persuasion.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">16</div>
+                <p class="slidetext">Are we trying to force or pressure people into believing?<a href="index.html#slide-16" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Take a beat. This is the question behind every aggressive comment-section evangelist, and it deserves a real answer rather than a deflection.</p>
+                <p>Concede the worry: some evangelising online genuinely is aggressive, and they have seen it.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">17</div>
+                <p class="slidetext">Invitation, never coercion<a href="index.html#slide-17" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>The Church spreads the kingdom by persuasion, not coercion — the principle runs all the way back to Constantine and the early councils.</p>
+                <p><strong>An invitation is something you extend, not something you enforce.</strong></p>
+                <div class="do">Practical version for them: if someone isn't ready, pray for them. Don't corner them. Especially online.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">18</div>
+                <p class="slidetext">Mother Teresa — Served the dying and poor; their freedom fully respected<a href="index.html#slide-18" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Calcutta, Missionaries of Charity. Canonised 2016.</p>
+                <p><strong>The detail to stress is the one in the subtitle — her freedom was fully respected.</strong> She never once forced a convert. She served first, and let the rest follow on its own.</p>
+                <p>She resisted the language of "charity" — she regarded it as justice, a matter of dignity rather than pity. Worth saying that people were treated as people, not as a strategy.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">19</div>
+                <p class="slidetext">What if I don't have an epic conversion story of my own?<a href="index.html#slide-19" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>This is the fear underneath most of the hesitation in the room: <em>my faith isn't dramatic enough to be worth mentioning.</em></p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">20</div>
+                <p class="slidetext">No personal epic needed — Share what inspires you in God's work in others<a href="index.html#slide-20" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>You do not need a testimony. You need an observation.</p>
+                <p><strong>What do you admire about someone else's faith?</strong> That is already enough to say out loud, and the next two slides prove it.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">21</div>
+                <p class="slidetext">miracolieucaristici.org<a href="index.html#slide-21" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Pull the site up live if you have connectivity, otherwise describe it. Either way, let it be a surprise — the reveal works better cold.</p>
+                <p>A teenager built this. The exhibition is in Milan.</p>
+                <div class="do">If you do go live, have the tab ready and know what the first screen shows. Don't fumble in front of the class.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">22</div>
+                <p class="slidetext">Carlo Acutis — Retold Eucharistic miracles online; his passion spoke<a href="index.html#slide-22" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Beatified 2020. Died in 2006, aged fifteen.</p>
+                <p>He asked to be buried in the field at Zelarino, outside Milan, so that people could come and pray there rather than come to look at him.</p>
+                <p><strong>The point is not the miracles — it is that his love for the Eucharist was contagious online.</strong> No arguments, no apologetics. Just what he loved, and people caught it. Exactly slide 12.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">23</div>
+                <p class="slidetext">Does my faith story have to be happy and blissful?<a href="index.html#slide-23" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Honest question, and probably true of someone in the room. Give it real air.</p>
+                <p>The pressure to present faith as constantly joyful is itself a kind of coercion — so say plainly that struggle is normal.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">24</div>
+                <p class="slidetext">Real faith limps — Struggle belongs to the journey<a href="index.html#slide-24" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Not a slogan, a fact. In the Bible, faith is very often a wrestling match rather than a smooth ride.</p>
+                <div class="do">Don't romanticise suffering, and don't let anyone disclose something heavy in front of the whole room. Keep it general and move on.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">25</div>
+                <p class="slidetext">Jacob — Wrestled with God, walked away with a limp<a href="index.html#slide-25" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Genesis 32. Worth noting who he is before he wrestles: a fugitive who has just talked his way out of a confrontation with Esau by pretending to be Esau.</p>
+                <p><strong>He does not go into the night strong. He comes out limping.</strong></p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">26</div>
+                <p class="slidetext">Genesis 32:24–31<a href="index.html#slide-26" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>Slow down here.</strong> This is one of the landing points.</p>
+                <p>The heart of it is verse 26: he holds on and will not let go until he is blessed. <em>I will not let you go, unless you bless me.</em> Even a schemer ends up asking God for a blessing, because he cannot manufacture one himself.</p>
+                <p>He walks away with a new name — Israel — <em>and</em> a limp. Both at once. That is how it works; you are not choosing between them.</p>
+                <p>Do not rush the last line. <em>Limping because of his thigh.</em> Pause after it.</p>
+                <p>If asked about the name change: the text says he wrestled with God and with men and prevailed. Israel is the one who has struggled with God.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">27</div>
+                <p class="slidetext">Evangelii Gaudium 150<a href="index.html#slide-27" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Pope Francis, 2013. People prefer witnesses to experts.</p>
+                <p><strong>They thirst for authenticity</strong> — they can tell the difference between someone performing a faith and someone living one.</p>
+                <p class="say">"Your grandmother was not authentic because she was polished. She was authentic because she was real."</p>
+                <p>This is the payoff for slide 13. Authenticity is not polish. It is recognisable because it is not designed.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">28</div>
+                <p class="slidetext">Will I get to see the results of sharing my faith?<a href="index.html#slide-28" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>The real fear behind the fear: <em>will any of it matter?</em></p>
+                <p>Honest answer: almost certainly not in the way you expect or get to watch.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">29</div>
+                <p class="slidetext">The ripple outlives you — Results reach far beyond your lifetime<a href="index.html#slide-29" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Stone in water. You are always looking at the ripple, never at the stone. <strong>The ripple is the part that lasts.</strong></p>
+                <p>The next three slides are the evidence.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">30</div>
+                <p class="slidetext">St. Francis Xavier — A legacy that continues centuries later<a href="index.html#slide-30" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>"Apostle to the Indies." Japan, India, and parts of Southeast Asia. Died on Shangchuan Island in 1552.</p>
+                <p><strong>One man, four and a half centuries ago, and the ripple is still moving.</strong> That is the entire argument of this slide.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">31</div>
+                <p class="slidetext">Where St. Francis Xavier is honored<a href="index.html#slide-31" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>Name the actual place out loud.</strong> This is the slide that turns four centuries into their own city, and it only works if you say where it is.</p>
+                <div class="do">Fill this in before you present — the image caption is generic on purpose.</div>
+                <p>Point out that people still go there. If anyone in the class has been, let them say so.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">32</div>
+                <p class="slidetext">Statue of St. Francis Xavier<a href="index.html#slide-32" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Let the image sit. Don't talk over it.</p>
+                <p>If the mood allows, make it practical: <em>there is a place you can go and stand in front of him.</em> Maybe suggest someone does.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">33</div>
+                <p class="slidetext">Would you share love with an enemy…?<a href="index.html#slide-33" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>The hardest slide in the deck. Give it room and do not rush past it.</p>
+                <p><strong>Do not ask for hands here.</strong> Nobody wants to answer that in public at fifteen, and putting them on the spot is exactly the coercion of slide 17.</p>
+                <p>Just let the question sit, then go to the answer.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">34</div>
+                <p class="slidetext">Strongest when you least feel it<a href="index.html#slide-34" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>The honest paradox: you share best when you don't feel like it.</p>
+                <p>Because at your worst it stops being about you and becomes about them. Your feelings are not the qualification.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">35</div>
+                <p class="slidetext">St. John Paul II — Visited his assassin in prison, and forgave him<a href="index.html#slide-35" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>The answer to slide 33. Slow down.</strong></p>
+                <p>Two months after being shot in St Peter's Square, he went to the prison and forgave the man who did it. Say the interval — <em>two months</em> — because that is what makes it remarkable rather than easy.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">36</div>
+                <p class="slidetext">St. Thérèse, age 14 — Prayed for a criminal's conversion<a href="index.html#slide-36" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Thérèse of Lisieux. <strong>She was fourteen.</strong> Lead with that — it lands immediately with this audience.</p>
+                <p>She prayed for a man condemned to death, and according to her account he converted before his execution. If anyone presses on the details: her account mentions the event, though exactly which prisoner was involved is disputed. Don't get drawn into it.</p>
+                <p>She had already decided her life was for other people. So can they.</p>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">37</div>
+                <p class="slidetext">Sharing Your Story in 3 Steps<a href="index.html#slide-37" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p><strong>The practical turn.</strong> Everything before this was preparation for it.</p>
+                <p>Pre-empt the main objection: <em>this isn't preaching.</em> It is answering three questions about your own life. Nobody is being asked to make a speech or to convince anybody of anything.</p>
+                <div class="do">If time allows, model one of the three in your own words. Not a polished version — a real one. Authenticity, slide 27.</div>
+            </div>
+        </article>
+
+        <article class="note">
+            <div>
+                <div class="n">38–39</div>
+                <p class="slidetext">Closing prayer — "Most Holy Virgin Mary…"<a href="index.html#slide-38" target="_blank" rel="noopener"><span class="cue">Open slide ↗</span></a></p>
+            </div>
+            <div class="notes">
+                <p>Let it be prayed. Slow the pace right down and do not rush the amen.</p>
+                <p>The second petition consecrates the New Evangelisation <em>for Singapore</em>. That ties straight back to slide 7 — the sending, made specific, for this place and these people.</p>
+                <p>Close by leaving it there. No summary speech; the prayer is the summary.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
